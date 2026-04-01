@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.gdsons.co.in",
+        hostname: "admin.modernworldtravel.com",
       },
     ],
   },
