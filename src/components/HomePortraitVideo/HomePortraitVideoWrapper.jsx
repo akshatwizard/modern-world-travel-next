@@ -1,7 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomePortraitVideo } from "./HomePortraitVideo";
-const PORTRAIT_VIDEO_API_URL = 'https://www.gdsons.co.in/draft/mwt/api/home-portrait-video';
+const PORTRAIT_VIDEO_API_URL = 'https://admin.modernworldtravel.com/api/home-portrait-video';
 export default async function HomePortraitVideoWrapper() {
     const queryClient = new QueryClient();
     try {

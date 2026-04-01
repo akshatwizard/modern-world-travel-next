@@ -1,7 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomePortraitImage } from "./HomePortraitImage";
-const PORTRAIT_API_URL = 'https://www.gdsons.co.in/draft/mwt/api/home-portrait-img';
+const PORTRAIT_API_URL = 'https://admin.modernworldtravel.com/api/home-portrait-img';
 export default async function HomePortraitImageWrapper() {
     const queryClient = new QueryClient();
     try {

@@ -6,7 +6,7 @@ import BlogDetailsPage from './BlogDetailsPage';
 async function getBlogDetails(slug) {
     try {
         const res = await fetch(
-            `https://www.gdsons.co.in/draft/mwt/api/blog/${slug}`,
+            `https://admin.modernworldtravel.com/api/blog/${slug}`,
             {
                 cache: 'no-store',
             }

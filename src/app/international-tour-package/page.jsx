@@ -4,7 +4,7 @@ import { InternationalTourPackageList } from './InternationalTourPackageList';
 async function getInternationalPackages() {
     try {
         const res = await fetch(
-            'https://www.gdsons.co.in/draft/mwt/api/international-tour-package',
+            'https://admin.modernworldtravel.com/api/international-tour-package',
             { cache: 'no-store' }
         );
         if (!res.ok) return null;

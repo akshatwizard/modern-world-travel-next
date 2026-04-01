@@ -7,7 +7,7 @@ export default async function HeaderWrapper() {
     queryKey: ["header-menu"],
     queryFn: async () => {
       const res = await axios.get(
-        "https://www.gdsons.co.in/draft/mwt/api/header-menu"
+        "https://admin.modernworldtravel.com/api/header-menu"
       );
       return res.data?.data;
     },

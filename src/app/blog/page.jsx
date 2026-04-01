@@ -4,7 +4,7 @@ import BlogListPage from './BlogListPage';
 async function getBlogList() {
     try {
         const res = await fetch(
-            'https://www.gdsons.co.in/draft/mwt/api/blog',
+            'https://admin.modernworldtravel.com/api/blog',
             { cache: 'no-store' }
         );
         if (!res.ok) {

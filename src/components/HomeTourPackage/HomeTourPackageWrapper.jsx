@@ -8,7 +8,7 @@ export default async function HomeTourPackageWrapper() {
             queryKey: ["home-tour-package-in-varanasi"],
             queryFn: async () => {
                 const res = await axios.get(
-                    "https://www.gdsons.co.in/draft/mwt/api/home-tour-package-in-varanasi"
+                    "https://admin.modernworldtravel.com/api/home-tour-package-in-varanasi"
                 );
                 return res.data;
             },

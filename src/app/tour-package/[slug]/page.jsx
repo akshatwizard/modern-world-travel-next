@@ -4,7 +4,7 @@ import ItineraryOrTourPackagePage from './ItineraryOrTourPackagePage';
 async function getItineraryDetails(slug) {
     try {
         const res = await fetch(
-            `https://www.gdsons.co.in/draft/mwt/api/itinerary/${slug}`
+            `https://admin.modernworldtravel.com/api/itinerary/${slug}`
         );
         if (!res.ok) {
             return null;

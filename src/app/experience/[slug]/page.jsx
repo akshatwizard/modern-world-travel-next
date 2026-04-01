@@ -4,7 +4,7 @@ import ExperienceDetailsPage from './ExperienceDetailsPage';
 async function getExperienceDetails(slug) {
     try {
         const res = await fetch(
-            `https://www.gdsons.co.in/draft/mwt/api/experience/${slug}`
+            `https://admin.modernworldtravel.com/api/experience/${slug}`
         );
         
         if (!res.ok) {

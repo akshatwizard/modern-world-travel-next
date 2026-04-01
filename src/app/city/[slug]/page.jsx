@@ -5,7 +5,7 @@ import axios from "axios";
 async function getCityDetails(slug) {
     try {
         const { data: response } = await axios.get(
-            `https://www.gdsons.co.in/draft/mwt/api/city/${slug}`
+            `https://admin.modernworldtravel.com/api/city/${slug}`
         );
         return response.data;
     } catch (error) {

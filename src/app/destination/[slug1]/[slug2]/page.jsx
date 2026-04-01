@@ -4,7 +4,7 @@ import DestinationDetailsPage from './DestinationDetailsPage';
 async function getDestinationDetails(slug1, slug2) {
     try {
         const res = await fetch(
-            `https://www.gdsons.co.in/draft/mwt/api/destination/${slug1}/${slug2}`
+            `https://admin.modernworldtravel.com/api/destination/${slug1}/${slug2}`
         );
         if (!res.ok) {
             return null;

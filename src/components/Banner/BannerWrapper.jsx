@@ -1,7 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { Banner } from "./Banner";
-const BANNER_API_URL = 'https://www.gdsons.co.in/draft/mwt/api/banner-img';
+const BANNER_API_URL = 'https://admin.modernworldtravel.com/api/banner-img';
 export default async function BannerWrapper() {
     const queryClient = new QueryClient();
     try {

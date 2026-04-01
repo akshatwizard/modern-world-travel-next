@@ -8,7 +8,7 @@ export default async function HomeInternationalTourPackagesWrapper() {
     const data = await queryClient.fetchQuery({
       queryKey: ["International-Tour-Packages"],
       queryFn: async () => {
-        const res = await axios.get('https://www.gdsons.co.in/draft/mwt/api/home-international-tour');
+        const res = await axios.get('https://admin.modernworldtravel.com/api/home-international-tour');
         return res.data;
       },
     });

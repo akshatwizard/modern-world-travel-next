@@ -3,7 +3,7 @@ import GallerySlugPage from './GallerySlugPage';
 async function getGalleryDetails(slug) {
     try {
         const res = await fetch(
-            `https://www.gdsons.co.in/draft/mwt/api/gallery/${slug}`,
+            `https://admin.modernworldtravel.com/api/gallery/${slug}`,
             {
                 cache: 'no-store',
             }

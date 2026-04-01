@@ -4,7 +4,7 @@ import axios from "axios";
 async function getTourLocationDetails(slug) {
     try {
         const { data: response } = await axios.get(
-            `https://www.gdsons.co.in/draft/mwt/api/tour-location/${slug}`
+            `https://admin.modernworldtravel.com/api/tour-location/${slug}`
         );
         return response.data;
 
