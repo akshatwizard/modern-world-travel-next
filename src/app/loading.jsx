@@ -19,8 +19,6 @@ const Loading = ({
 }) => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [percentage, setPercentage] = useState(0);
-
-    // Handle responsive window width
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setWindowWidth(window.innerWidth);
@@ -33,8 +31,6 @@ const Loading = ({
             return () => window.removeEventListener('resize', handleResize);
         }
     }, []);
-
-    // Animate percentage if showPercentage is enabled
     useEffect(() => {
         if (!showPercentage) return;
 
@@ -44,22 +40,16 @@ const Loading = ({
 
         return () => clearInterval(interval);
     }, [showPercentage]);
-
-    // Size configurations with better type safety
     const sizeConfig = useMemo(() => ({
         small: { container: 40, inner: 20, center: 6 },
         medium: { container: 60, inner: 30, center: 9 },
         large: { container: 80, inner: 40, center: 12 }
     }), []);
-
-    // Speed configurations
     const speedConfig = useMemo(() => ({
         slow: { spin: '1.5s', pulse: '2s', progress: '3s' },
         normal: { spin: '1s', pulse: '1.5s', progress: '2s' },
         fast: { spin: '0.6s', pulse: '1s', progress: '1s' }
     }), []);
-
-    // Determine responsive size
     const getResponsiveSize = useMemo(() => {
         if (windowWidth === 0) return size;
         if (windowWidth < 640) return 'small';
@@ -70,8 +60,6 @@ const Loading = ({
     const responsiveSize = getResponsiveSize;
     const currentSize = sizeConfig[responsiveSize];
     const currentSpeed = speedConfig[speed];
-
-    // Parse color for opacity variants
     const parseColorWithOpacity = (baseColor, alpha = 1) => {
         if (baseColor.startsWith('#')) {
             const r = parseInt(baseColor.slice(1, 3), 16);
@@ -86,8 +74,6 @@ const Loading = ({
     const lightColor = parseColorWithOpacity(color, 0.2);
     const lighterColor = parseColorWithOpacity(color, 0.1);
     const veryLightColor = parseColorWithOpacity(color, 0.05);
-
-    // Spinner variant renderer
     const renderSpinner = () => (
         <div className="relative" data-testid="spinner-container">
             {/* Outer ring with gradient */}
@@ -104,7 +90,6 @@ const Loading = ({
                 aria-valuemax="100"
                 aria-label="Loading spinner"
             />
-
             {/* Inner mask */}
             <div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
@@ -113,7 +98,6 @@ const Loading = ({
                     height: `${currentSize.container * 0.7}px`
                 }}
             />
-
             {/* Center dot with pulse animation */}
             <div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full"
@@ -126,8 +110,6 @@ const Loading = ({
             />
         </div>
     );
-
-    // Dots variant renderer
     const renderDots = () => (
         <div className="flex items-center justify-center space-x-3" data-testid="dots-container">
             {[...Array(3)].map((_, i) => (
@@ -199,9 +181,9 @@ const Loading = ({
                     )}
 
                     {/* Subtle help text */}
-                    <p className="text-xs text-gray-400 mt-1">
+                    {/* <p className="text-xs text-gray-400 mt-1">
                         This will only take a moment...
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Optional progress bar */}
