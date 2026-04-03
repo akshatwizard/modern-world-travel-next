@@ -14664,8 +14664,10 @@ button.gm-ui-hover-effect::after {
   font-weight: 500;
 }
 .blog-list-container .blog-list-title{
-  font-size: 22px;
+  font-size: 20px;
   line-height: 25px;
+  color: var(--color-logo-1);
+  -webkit-text-fill-color: unset;
 }
 .tour-package-home .featureCard__content{
   justify-content: center;
