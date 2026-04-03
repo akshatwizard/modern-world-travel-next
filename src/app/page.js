@@ -37,7 +37,7 @@ export default function Home() {
       <HomePortraitVideoWrapper/>
       {/* <Suspense fallback={<Spinner />}>
         <Testimonials />
-      </Suspense> 
+      </Suspense> */}
     </>
   );
 }
