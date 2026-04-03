@@ -62,7 +62,7 @@ export default function BlogListPage({ initialData }) {
                                             <Heading
                                                 level={3}
                                                 text={item.title}
-                                                className="blogCard__title blog-list-title  fw-600 mt-10"
+                                                className="blogCard__title blog-list-title  fw-500 mt-10"
                                             />
                                             <p>
                                                 {item.blog_intro
