@@ -14663,11 +14663,10 @@ button.gm-ui-hover-effect::after {
   justify-content: center;
 }
 .tour-package-home  .featureCard.-type-1 .featureCard__content .title-color{
-    font-family: var(--font-primary);
-    text-transform: unset;
+    font-family: var(--P22Mackinac-Medium-font);
     font-size: 18px;
     line-height: 25px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .bg-blue-40:before {
     content: '';
