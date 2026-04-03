@@ -5,15 +5,7 @@ export const HomeAbout = () => {
     return (
         <div className="container about-home-section">
             <div className="row items-center">
-                <div className="col-md-5">
-                    <div className="abou-home-image">
-                        <img
-                            src="/assets/modern-img/about.jpg"
-                            className="mx-auto rounded-3xl shadow-sm dark:shadow-gray-700"
-                            alt=""
-                        />                                                
-                    </div>
-                </div>
+                
                 <div className="col-md-7">
                     <div className="about-home-content">
                         <Heading
@@ -37,7 +29,16 @@ export const HomeAbout = () => {
                             Read More 
                         </Link>
                     </div>
-                </div>                
+                </div>    
+                <div className="col-md-5">
+                    <div className="abou-home-image">
+                        <img
+                            src="/assets/modern-img/about.jpg"
+                            className="mx-auto rounded-3xl shadow-sm dark:shadow-gray-700"
+                            alt=""
+                        />                                                
+                    </div>
+                </div>
             </div>
         </div>
 
