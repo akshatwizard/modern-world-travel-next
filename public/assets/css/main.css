@@ -5082,6 +5082,7 @@ h1, h2, h3{
   padding-bottom: 20px;
 }
 .h-portait-image-section .port-img-title,
+.h-landscape-image-section .land-img-title,
 .gallery-masonry-container .p-portrait-img-title,
 .gallery-masonry-container .p-landscape-img-title{
   font-family: var(--P22Mackinac-Medium-font);
