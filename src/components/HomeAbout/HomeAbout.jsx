@@ -30,7 +30,7 @@ export const HomeAbout = () => {
     ];
     return (
         <>
-            <section className="about-home pt-16 pb-16 lg:pt-24 lg:pb-24">
+            <section className="about-home">
                 <div className="about-home-container">                    
                     <div className="container about-home-section relative z-10">
                         <div className="row items-center">                            
