@@ -1,7 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { HomeAbout } from '../HomeAbout/HomeAbout';
 export function Header({ menuList }) {
+    const pathname = usePathname();
     useEffect(() => {
         if (!menuList || menuList.length === 0) return;
         headerSticky()
@@ -12,222 +15,234 @@ export function Header({ menuList }) {
     const isLoading = !menuList || menuList.length === 0;
     return (
         <>
-            <header className="header -type-3 -page-5 js-header">
-                <div className="header__container container">
-                    <div className="header__logo">
-                        <Link href="/" className="header-logo-btn">
-                            <img src="/assets/modern-img/logo-new.jpg" alt="logo icon" />
-                        </Link>
-                        <div className="xl:d-none ml-30 desktop-head-nav">
-                            <div className="desktopNav">
-                                <div className="desktopNav__item">
-                                    <Link className="desktopNav__item_a" href="/">Home</Link>
-                                </div>
-                                <div className="desktopNav__item">
-                                    <Link className="desktopNav__item_a" href="/about-us">About Us</Link>
-                                </div>
-                                {
-                                    isLoading &&
-                                    <>
-                                        <div className="desktopNav__item">
-                                            <Link className="desktopNav__item_a" href="/">
-                                                Destination
-                                                <i className="icon-chevron-down" />
-                                            </Link>
-                                        </div>
-                                        <div className="desktopNav__item">
-                                            <Link className="desktopNav__item_a" href="/">
-                                                Experience
-                                                <i className="icon-chevron-down" />
-                                            </Link>
-                                        </div>
-                                        <div className="desktopNav__item">
-                                            <Link className="desktopNav__item_a" href="/">
-                                                Package
-                                                <i className="icon-chevron-down" />
-                                            </Link>
-                                        </div>
-                                    </>
-                                }
-                                {!isLoading &&
-                                    menuList &&
-                                    menuList.map((menu) => (
-                                        <div className="desktopNav__item" key={menu.title}>
-                                            <Link href="#" className="desktopNav__item_a">
-                                                {menu.title}
-                                                <i className="icon-chevron-down" />
-                                            </Link>
-                                            {menu.sections && menu.sections.length > 0 && (
-                                                <>
-                                                    <div className="desktopNavMega">
-                                                        <div className="desktopNavMega__container">
-                                                            <div className="desktopNavMega__lists">
-                                                                {menu.sections.map((section) => (
-                                                                    <div className="desktopNavMega-list" key={section.title}>
-                                                                        <div className="desktopNavMega-list__item">
-                                                                            <div className="desktopNavMega-list__title">
-                                                                                {section.title}
-                                                                            </div>
+            <div className="relative">
+                {pathname === '/' && (
+                    <div
+                        className="absolute inset-0 blur-3xl"
+                        style={{
+                            background: `linear-gradient(135deg, #eb6605 0%, #ff8c42 40%, #004d91 80%, #1a3c7a 100%)`,
+                            opacity: 0.15,
+                            zIndex: 0,
+                        }}
+                    ></div>
+                )}
+                <header className="header -type-3 -page-5 js-header">
+                    <div className="header__container container">
+                        <div className="header__logo">
+                            <Link href="/" className="header-logo-btn">
+                                <img src="/assets/modern-img/logo-new.jpg" alt="logo icon" />
+                            </Link>
+                            <div className="xl:d-none ml-30 desktop-head-nav">
+                                <div className="desktopNav">
+                                    <div className="desktopNav__item">
+                                        <Link className="desktopNav__item_a" href="/">Home</Link>
+                                    </div>
+                                    <div className="desktopNav__item">
+                                        <Link className="desktopNav__item_a" href="/about-us">About Us</Link>
+                                    </div>
+                                    {
+                                        isLoading &&
+                                        <>
+                                            <div className="desktopNav__item">
+                                                <Link className="desktopNav__item_a" href="/">
+                                                    Destination
+                                                    <i className="icon-chevron-down" />
+                                                </Link>
+                                            </div>
+                                            <div className="desktopNav__item">
+                                                <Link className="desktopNav__item_a" href="/">
+                                                    Experience
+                                                    <i className="icon-chevron-down" />
+                                                </Link>
+                                            </div>
+                                            <div className="desktopNav__item">
+                                                <Link className="desktopNav__item_a" href="/">
+                                                    Package
+                                                    <i className="icon-chevron-down" />
+                                                </Link>
+                                            </div>
+                                        </>
+                                    }
+                                    {!isLoading &&
+                                        menuList &&
+                                        menuList.map((menu) => (
+                                            <div className="desktopNav__item" key={menu.title}>
+                                                <Link href="#" className="desktopNav__item_a">
+                                                    {menu.title}
+                                                    <i className="icon-chevron-down" />
+                                                </Link>
+                                                {menu.sections && menu.sections.length > 0 && (
+                                                    <>
+                                                        <div className="desktopNavMega">
+                                                            <div className="desktopNavMega__container">
+                                                                <div className="desktopNavMega__lists">
+                                                                    {menu.sections.map((section) => (
+                                                                        <div className="desktopNavMega-list" key={section.title}>
+                                                                            <div className="desktopNavMega-list__item">
+                                                                                <div className="desktopNavMega-list__title">
+                                                                                    {section.title}
+                                                                                </div>
 
-                                                                            <div className="desktopNavMega-list__list">
-                                                                                {section.items &&
-                                                                                    section.items.map((item, idx) => (
-                                                                                        <div
-                                                                                            className="desktopNavMega-list__link"
-                                                                                            key={idx}
-                                                                                        >
-                                                                                            <Link
-                                                                                                href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
-                                                                                                className='dropdown-link-a'>
-                                                                                                {item.name}
-                                                                                                {
-                                                                                                    item.duration && (
-                                                                                                        <>
-                                                                                                            <br /><span className="span-text-s">
-                                                                                                                {item.duration}
-                                                                                                            </span>
-                                                                                                        </>
-                                                                                                    )
-                                                                                                }
-                                                                                            </Link>
+                                                                                <div className="desktopNavMega-list__list">
+                                                                                    {section.items &&
+                                                                                        section.items.map((item, idx) => (
+                                                                                            <div
+                                                                                                className="desktopNavMega-list__link"
+                                                                                                key={idx}
+                                                                                            >
+                                                                                                <Link
+                                                                                                    href={`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
+                                                                                                    className='dropdown-link-a'>
+                                                                                                    {item.name}
+                                                                                                    {
+                                                                                                        item.duration && (
+                                                                                                            <>
+                                                                                                                <br /><span className="span-text-s">
+                                                                                                                    {item.duration}
+                                                                                                                </span>
+                                                                                                            </>
+                                                                                                        )
+                                                                                                    }
+                                                                                                </Link>
 
-                                                                                        </div>
-                                                                                    ))}
+                                                                                            </div>
+                                                                                        ))}
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                ))}
+                                                                    ))}
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        </div>
-                                    ))
-                                }
+                                                    </>
+                                                )}
+                                            </div>
+                                        ))
+                                    }
 
-                                <div className="desktopNav__item">
-                                    <Link href="/blog" className="desktopNav__item_a">Blog</Link>
-                                </div>
-                                <div className="desktopNav__item">
-                                    <Link href="/contact-us" className="desktopNav__item_a">Contact Us</Link>
+                                    <div className="desktopNav__item">
+                                        <Link href="/blog" className="desktopNav__item_a">Blog</Link>
+                                    </div>
+                                    <div className="desktopNav__item">
+                                        <Link href="/contact-us" className="desktopNav__item_a">Contact Us</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div className="headerMobile__left">
+                            <button className="header__menuBtn js-menu-button">
+                                <i className="icon-main-menu" />
+                            </button>
+                        </div>
                     </div>
-                    <div className="headerMobile__left">
-                        <button className="header__menuBtn js-menu-button">
-                            <i className="icon-main-menu" />
-                        </button>
-                    </div>
-                </div>
-            </header>
+                </header>
+                <div className="menu js-menu mobile_menu_section">
+                    <div className="menu__overlay js-menu-button"></div>
+                    <div className="menu__container">
+                        <div className="menu__header">
+                            <h4>Menu</h4>
+                            <button className="js-menu-button">
+                                <i className="icon-cross text-10"></i>
+                            </button>
+                        </div>
 
-            <div className="menu js-menu mobile_menu_section">
-                <div className="menu__overlay js-menu-button"></div>
-                <div className="menu__container">
-                    <div className="menu__header">
-                        <h4>Menu</h4>
-                        <button className="js-menu-button">
-                            <i className="icon-cross text-10"></i>
-                        </button>
-                    </div>
-
-                    <div className="menu__content">
-                        <ul className="menuNav js-navList">
-                            <li className="menuNav__item">
-                                <Link href="/">Home</Link>
-                            </li>
-                            <li className="menuNav__item">
-                                <Link href="/about-us">About Us</Link>
-                            </li>
-                            {!isLoading && menuList && menuList.map((menu, menuIndex) => (
-                                <li className={`menuNav__item ${menu.sections && menu.sections.length > 0 ? '-has-submenu js-has-submenu' : ''}`} key={menuIndex}>
-                                    {menu.sections && menu.sections.length > 0 && (
-                                        <>
-                                            <a>
-                                                {menu.title}
-                                                <i className="icon-chevron-right"></i>
-                                            </a>
-
-                                            <ul className="submenu">
-                                                <li className="submenu__item js-nav-list-back">
-                                                    <a>Back</a>
-                                                </li>
-                                                {menu.sections.map((section, sectionIndex) => (
-                                                    <React.Fragment key={sectionIndex}>
-                                                        <li className="submenu__item menu-head-se">
-                                                            <a className="submenu__item-title menu-head-t">{section.title}</a>
-                                                        </li>
-                                                        {section.items && section.items.map((item, itemIndex) => (
-                                                            <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
-                                                                <Link href=
-                                                                    {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
-                                                                >
-                                                                    {item.name}
-                                                                    {/* {item.duration && (
-                                                            <>
-                                                                <br />
-                                                                <span className="span-text-s">{item.duration}</span>
-                                                            </>
-                                                            )} */}
-                                                                </Link>
-                                                            </li>
-                                                        ))}
-                                                    </React.Fragment>
-                                                ))}
-                                            </ul>
-
-                                        </>
-                                    )}
+                        <div className="menu__content">
+                            <ul className="menuNav js-navList">
+                                <li className="menuNav__item">
+                                    <Link href="/">Home</Link>
                                 </li>
-                            ))}
-                            <li className="menuNav__item">
-                                <Link href="/blog">Blog</Link>
-                            </li>
-                            <li className="menuNav__item">
-                                <Link href="/contact-us">Contact Us</Link>
-                            </li>
-                        </ul>
-                    </div>
+                                <li className="menuNav__item">
+                                    <Link href="/about-us">About Us</Link>
+                                </li>
+                                {!isLoading && menuList && menuList.map((menu, menuIndex) => (
+                                    <li className={`menuNav__item ${menu.sections && menu.sections.length > 0 ? '-has-submenu js-has-submenu' : ''}`} key={menuIndex}>
+                                        {menu.sections && menu.sections.length > 0 && (
+                                            <>
+                                                <a>
+                                                    {menu.title}
+                                                    <i className="icon-chevron-right"></i>
+                                                </a>
 
+                                                <ul className="submenu">
+                                                    <li className="submenu__item js-nav-list-back">
+                                                        <a>Back</a>
+                                                    </li>
+                                                    {menu.sections.map((section, sectionIndex) => (
+                                                        <React.Fragment key={sectionIndex}>
+                                                            <li className="submenu__item menu-head-se">
+                                                                <a className="submenu__item-title menu-head-t">{section.title}</a>
+                                                            </li>
+                                                            {section.items && section.items.map((item, itemIndex) => (
+                                                                <li className="submenu__item" key={`${sectionIndex}-${itemIndex}`}>
+                                                                    <Link href=
+                                                                        {`${section.title === "Favourite Cities" ? "/city" : menu.title === "Packages" ? "/tour-package" : menu.title === "Experience" ? "/experience" : "/tours-location"}/${item.url}`}
+                                                                    >
+                                                                        {item.name}
+                                                                        {/* {item.duration && (
+                                                                <>
+                                                                    <br />
+                                                                    <span className="span-text-s">{item.duration}</span>
+                                                                </>
+                                                                )} */}
+                                                                    </Link>
+                                                                </li>
+                                                            ))}
+                                                        </React.Fragment>
+                                                    ))}
+                                                </ul>
 
-                    <div className="menu__footer">
-                        <i className="icon-headphone text-50 text-[white]"></i>
-                        <div className="text-20 lh-12 fw-500 mt-15">
-                            <div className='text-[white]'>Speak to our expert at</div>
-                            <div className="mt-6 text-[white]">1-800-453-6744</div>
+                                            </>
+                                        )}
+                                    </li>
+                                ))}
+                                <li className="menuNav__item">
+                                    <Link href="/blog">Blog</Link>
+                                </li>
+                                <li className="menuNav__item">
+                                    <Link href="/contact-us">Contact Us</Link>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div className="d-flex items-center x-gap-10 pt-30">
 
-                            <div>
-                                <a className="d-block" href="" target="_blank">
-                                    <i className="icon-facebook text-[white]"></i>
-                                </a>
+                        <div className="menu__footer">
+                            <i className="icon-headphone text-50 text-[white]"></i>
+                            <div className="text-20 lh-12 fw-500 mt-15">
+                                <div className='text-[white]'>Speak to our expert at</div>
+                                <div className="mt-6 text-[white]">1-800-453-6744</div>
                             </div>
 
-                            <div>
-                                <a className="d-block" href="" target="_blank">
-                                    <i className="icon-twitter text-[white]"></i>
-                                </a>
-                            </div>
+                            <div className="d-flex items-center x-gap-10 pt-30">
 
-                            <div>
-                                <a className="d-block" href="" target="_blank">
-                                    <i className="icon-instagram text-[white]"></i>
-                                </a>
-                            </div>
+                                <div>
+                                    <a className="d-block" href="" target="_blank">
+                                        <i className="icon-facebook text-[white]"></i>
+                                    </a>
+                                </div>
 
-                            <div>
-                                <a className="d-block" href="" target="_blank">
-                                    <i className="icon-linkedin text-[white]"></i>
-                                </a>
-                            </div>
+                                <div>
+                                    <a className="d-block" href="" target="_blank">
+                                        <i className="icon-twitter text-[white]"></i>
+                                    </a>
+                                </div>
 
+                                <div>
+                                    <a className="d-block" href="" target="_blank">
+                                        <i className="icon-instagram text-[white]"></i>
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <a className="d-block" href="" target="_blank">
+                                        <i className="icon-linkedin text-[white]"></i>
+                                    </a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+                {pathname === '/' && <HomeAbout />}
             </div>
         </>
     )

@@ -83,7 +83,7 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
 
     if (landscapeImages.length > 0) {
         return (
-            <section className="relative layout-pt-xl layout-pb-xl bg-gradient-to-b from-gray-50 to-white home-landscape-img-se h-landscape-image-section">
+            <section className="relative layout-pt-xl layout-pb-x home-landscape-img-se h-landscape-image-section">
                 <div className="container relative">
                     <div className="row justify-center text-center">
                         <div className="col-auto">
