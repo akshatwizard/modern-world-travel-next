@@ -12,13 +12,15 @@ import HomeLandscapeVideoWrapper from "@/components/HomeLandscapeVideo/HomeLands
 import HomePortraitImageWrapper from "@/components/HomePortraitImage/HomePortraitImageWrapper";
 import BannerWrapper from "@/components/Banner/BannerWrapper";
 import HomePortraitVideoWrapper from "@/components/HomePortraitVideo/HomePortraitVideoWrapper";
+import { BannerForm } from "@/components/BannerForm/BannerForm";
 export default function Home() {
   return (
     <>
      {/* <Suspense fallback={<Spinner />}>
         <BannerWrapper />
       </Suspense> */}
-      <HomeAbout />
+      {/* <HomeAbout /> */}
+      <BannerForm />
       <HomeLandscapeImageWrapper/>
       <Suspense fallback={<Spinner />}>
         <HomeTrendingDestinationsWrapper />
