@@ -18,7 +18,7 @@ export function Header({ menuList }) {
             <div className="relative">
                 {pathname === '/' && (
                     <div
-                        className="absolute inset-0 blur-3xl"
+                        className="absolute inset-0"
                         style={{
                             background: `linear-gradient(135deg, #eb6605 0%, #ff8c42 40%, #004d91 80%, #1a3c7a 100%)`,
                             opacity: 0.15,
