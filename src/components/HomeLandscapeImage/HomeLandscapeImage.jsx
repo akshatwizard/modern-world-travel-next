@@ -122,7 +122,7 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
                                             key={item.id}
                                             className="pl-3 lg:pl-4 basis-1/2 md:basis-1/4"
                                         >
-                                            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                                            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mb-3">
                                                 <div className="relative lg:h-80 md:h-60 h-60 overflow-hidden">
                                                     {item.external_url && item.external_url.trim() && item.external_url !== " " ? (
                                                         <a
@@ -162,14 +162,14 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
                                                             />
                                                         </a>
                                                     )}
-                                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
-                                                        {item.title && item.title.trim() && (
-                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18 land-img-title">
-                                                                {item.title} 
-                                                            </div>
-                                                        )}
-                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div className="text-center px-2">
+                                                {item.title && item.title.trim() && (
+                                                    <div className="text-[#eb6605] font-semibold text-center mb-1 truncate text-18 land-img-title">
+                                                        {item.title} 
+                                                    </div>
+                                                )}
                                             </div>
                                         </CarouselItem>
                                     ))}

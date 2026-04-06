@@ -13,41 +13,40 @@ export const HomeWhyChoose = () => {
                                     <h2></h2>
                                     <Heading
                                         level={2}
-                                        text="Why Choose Modern World Travel ?"
+                                        text="Why Choose the Best Travel Agency in Varanasi ?"
                                         className="text-30 md:text-24 mb-1"
                                     /> 
                                     <p>
-                                       The purpose of our Travel Agency is simple; helping our Visitors & Tourists get exactly what they want at the best value available. Consequently, we are capable of providing an exceptionally complex range of Travel Plans and Itiniraries for both individual and corporate clients. We are convinced that besides being sensitive to prices, people tend to choose their Travel Agency on the basis of reliability.
+                                       The focus is simple: helping you find the right travel experience at the best value. You get access to a wide range of customized tour packages and well-planned itineraries for family trips, group tours, and corporate travel. With strong attention to reliability, comfort, and smooth execution, your journey stays stress-free, organized, and truly memorable.
                                     </p>
                                     
                                 </div>
                                 <ul className="list-style-one clearfix pb-5">
                                     <li>
                                         <a className="gradient-color">
-                                            <i className="icon-arrow-right gradient-color" /> Professional Tour
-                                            Guide
+                                            <i className="icon-arrow-right gradient-color" /> Professional Tour Guides
                                         </a>
                                     </li>
                                     <li>
                                         <a  className="gradient-color">
-                                            <i className="icon-arrow-right gradient-color" /> Quality you can trust
+                                            <i className="icon-arrow-right gradient-color" />
+                                            Trusted & Quality Travel Services
                                         </a>
                                     </li>
                                     <li>
                                         <a className="gradient-color">
-                                            <i className="icon-arrow-right gradient-color" /> Exceptional
-                                            flexibility
+                                            <i className="icon-arrow-right gradient-color" /> Flexible & Customized Packages
                                         </a>
                                     </li>
                                     <li>
                                         <a className="gradient-color">
-                                            <i className="icon-arrow-right gradient-color" /> Award-winning support
+                                            <i className="icon-arrow-right gradient-color" /> Dedicated Support Throughout
                                         </a>
                                     </li>
                                     <li>
                                         <a className="gradient-color">
-                                            <i className="icon-arrow-right gradient-color" /> Blandit sit amet non
-                                            magna
+                                            <i className="icon-arrow-right gradient-color" /> 
+                                            Reliable & Hassle-Free Planning
                                         </a>
                                     </li>
                                 </ul>
@@ -73,16 +72,16 @@ export const HomeWhyChoose = () => {
                 <div className="content_block_two">
                     <div className="content-box">
                         <span className="sub-title">discover</span>
-                        <p>IT’S LIMITED SEATING! HURRY UP</p>
+                        <p>EXPERIENCE THE SPIRITUAL SOUL OF Varanasi</p>
                         <Heading
                             level={3}
-                            text="New Experiences in Singapore Delight"
+                            text="Explore Timeless Ghats, Temples & Sacred Journeys"
                             className="text-white! why-head"
                         />
                         <Heading
                             level={4}
-                            text="45 <span>% OFF</span>"
-                            className="text-50 text-white!"
+                            text="Seamless Travel Experiences Crafted for Every Traveler"
+                            className="text-20 text-white!"
                             allowHTML={true}
                         />
                         <div className="btn-box mt-3">
