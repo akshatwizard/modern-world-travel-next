@@ -41,10 +41,9 @@ export const HomeAbout = () => {
                                         className="text-40 md:text-20 md:max-w-full max-w-xl font-extrabold md:mt-8 mt-4 mx-auto about-h-home-heading"
                                     >
                                         Modern World Travel —                            
-                                        Your 
-                                        <span> Journey, </span>
-                                        Our 
-                                        <span> Passion</span> .
+                                        <span> Where Your  </span>
+                                        Perfect 
+                                        <span> Journey Begins</span> .
                                     </Heading>
                                     <div className='about-text'>
                                         <p className="mb-3!">
