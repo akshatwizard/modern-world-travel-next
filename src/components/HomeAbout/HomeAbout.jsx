@@ -48,7 +48,7 @@ export const HomeAbout = () => {
                                     </Heading>
                                     <div className='about-text'>
                                         <p className="mb-3!">
-                                            Modern World Travel has its corporate office in Varanasi. Located in the prime commercial/tourist area of the city of Varanasi, Modern World Travel's close to a whole range of hotels from 5 star to budget. 
+                                           Modern World Travel is a trusted travel agency in Varanasi. Located in a prime tourist and commercial area, we offer easy access to a wide range of hotels, from luxury stays to budget options, ensuring a smooth and comfortable travel experience. 
                                         </p>
                                         
                                     </div>

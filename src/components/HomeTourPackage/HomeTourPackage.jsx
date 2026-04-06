@@ -13,7 +13,7 @@ export const HomeTourPackage = ({ initialData }) => {
                     <div className="col-auto">
                         <Heading
                             level={2}
-                            text={initialData?.title || 'Tour Packages in Varanasi'}
+                            text={initialData?.title || 'Varanasi Tour Packages for a Complete Travel Experience'}
                             className="text-30 md:text-24 mb-1"
                         />                        
                     </div>

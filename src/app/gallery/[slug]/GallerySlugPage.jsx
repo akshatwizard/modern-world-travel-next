@@ -86,55 +86,55 @@ export default function GallerySlugPage({ initialData }) {
                                     return (
                                         <div
                                             key={item.id}
-                                            className="col-xl-4 col-lg-4 col-sm-6 col-12 mb-5 masonry-item p-2"
+                                            className="col-xl-4 col-lg-4 col-sm-6 col-12  masonry-item"
                                         >
-                                            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                                                <div className="relative h-80 overflow-hidden">
-                                                    {externalUrl && externalUrl.trim() ? (
-                                                        <a
-                                                            href={externalUrl}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="block w-full h-full relative"
-                                                        >
-                                                            <img
-                                                                src={image}
-                                                                alt={title || `Image ${item.id}`}
-                                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                                loading="lazy"
-                                                                onError={(e) => {
-                                                                    e.currentTarget.src = '/assets/modern-img/varanasi-sarnath.jpg';
-                                                                }}
-                                                            />
-                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                        </a>
-                                                    ) : (
-                                                        <a
-                                                            href={image}
-                                                            data-fancybox="gallery"
-                                                            data-caption={title || `Image ${item.id}`}
-                                                            className="block w-full h-full relative"
-                                                        >
-                                                            <img
-                                                                src={image}
-                                                                alt={title || `Image ${item.id}`}
-                                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                                loading="lazy"
-                                                                onError={(e) => {
-                                                                    e.currentTarget.src = '/assets/modern-img/varanasi-sarnath.jpg';
-                                                                }}
-                                                            />
-                                                        </a>
-                                                    )}
-
-                                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
-                                                        {title && title.trim() && (
-                                                            <div className="text-white font-semibold text-center mb-1 truncate text-18 p-landscape-img-title">
-                                                                {title}
-                                                            </div>
+                                            <div className="mb-5 p-2 pb-4">
+                                                <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 mb-3">
+                                                    <div className="relative h-80 overflow-hidden">
+                                                        {externalUrl && externalUrl.trim() ? (
+                                                            <a
+                                                                href={externalUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="block w-full h-full relative"
+                                                            >
+                                                                <img
+                                                                    src={image}
+                                                                    alt={title || `Image ${item.id}`}
+                                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                                    loading="lazy"
+                                                                    onError={(e) => {
+                                                                        e.currentTarget.src = '/assets/modern-img/varanasi-sarnath.jpg';
+                                                                    }}
+                                                                />
+                                                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                            </a>
+                                                        ) : (
+                                                            <a
+                                                                href={image}
+                                                                data-fancybox="gallery"
+                                                                data-caption={title || `Image ${item.id}`}
+                                                                className="block w-full h-full relative"
+                                                            >
+                                                                <img
+                                                                    src={image}
+                                                                    alt={title || `Image ${item.id}`}
+                                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                                    loading="lazy"
+                                                                    onError={(e) => {
+                                                                        e.currentTarget.src = '/assets/modern-img/varanasi-sarnath.jpg';
+                                                                    }}
+                                                                />
+                                                            </a>
                                                         )}
-                                                    </div>
-
+                                                    </div>                                                
+                                                </div>
+                                                <div className="text-center px-2">
+                                                    {title && title.trim() && (
+                                                        <div className="text-[#eb6605] font-semibold text-center mb-1 text-18  p-landscape-img-title">
+                                                            {title}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
