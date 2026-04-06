@@ -1,10 +1,15 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import React from 'react';
 import TourLocationPage from './TourLocationPage';
 import axios from "axios";
 async function getTourLocationDetails(slug) {
     try {
         const { data: response } = await axios.get(
-            `https://admin.modernworldtravel.com/api/tour-location/${slug}`
+            `https://admin.modernworldtravel.com/api/tour-location/${slug}`,
+            {
+                cache: 'no-store',
+            }
         );
         return response.data;
 

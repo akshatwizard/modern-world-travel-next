@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomeTrendingDestinations } from "./HomeTrendingDestinations";
@@ -11,6 +12,7 @@ export default async function HomeTrendingDestinationsWrapper() {
         const res = await axios.get('https://admin.modernworldtravel.com/api/home-trending-destinations');
         return res.data;
       },
+      staleTime: 0,
     });
 
     return <HomeTrendingDestinations initialData={data} />;

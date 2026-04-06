@@ -1,10 +1,15 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import React from 'react';
 import ItineraryOrTourPackagePage from './ItineraryOrTourPackagePage';
 
 async function getItineraryDetails(slug) {
     try {
         const res = await fetch(
-            `https://admin.modernworldtravel.com/api/itinerary/${slug}`
+            `https://admin.modernworldtravel.com/api/itinerary/${slug}`,
+            {
+                cache: 'no-store',
+            }
         );
         if (!res.ok) {
             return null;

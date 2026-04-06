@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomeTourPackage } from "./HomeTourPackage";
@@ -12,6 +13,7 @@ export default async function HomeTourPackageWrapper() {
                 );
                 return res.data;
             },
+            staleTime: 0,
         });
         return (
             <HomeTourPackage

@@ -1,10 +1,15 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import React from 'react';
 import ExperienceDetailsPage from './ExperienceDetailsPage';
 
 async function getExperienceDetails(slug) {
     try {
         const res = await fetch(
-            `https://admin.modernworldtravel.com/api/experience/${slug}`
+            `https://admin.modernworldtravel.com/api/experience/${slug}`,
+            {
+                cache: 'no-store',
+            }
         );
         
         if (!res.ok) {
