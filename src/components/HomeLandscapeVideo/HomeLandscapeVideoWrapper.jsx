@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomeLandscapeVideo } from "./HomeLandscapeVideo";
@@ -12,6 +13,7 @@ export default async function HomeLandscapeVideoWrapper() {
                 const res = await axios.get(LANDSCAPE_VIDEO_API_URL);                
                 return res.data;
             },
+            staleTime: 0,
         });
 
         console.log('Server: Video Query response:', {

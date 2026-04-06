@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomePortraitVideo } from "./HomePortraitVideo";
@@ -11,6 +12,7 @@ export default async function HomePortraitVideoWrapper() {
                 const res = await axios.get(PORTRAIT_VIDEO_API_URL);
                 return res.data;
             },
+            staleTime: 0,
         });
         if (response?.status === true && Array.isArray(response.data)) {
             return (

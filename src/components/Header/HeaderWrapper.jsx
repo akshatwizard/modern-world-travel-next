@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { Header } from "./Header";
@@ -11,6 +12,7 @@ export default async function HeaderWrapper() {
       );
       return res.data?.data;
     },
+    staleTime: 0,
   });
   return <Header menuList={menuList}/>;
 }

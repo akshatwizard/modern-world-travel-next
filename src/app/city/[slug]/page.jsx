@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import React from 'react';
 import CityPage from './CityPage';
 import axios from "axios";
@@ -5,7 +7,10 @@ import axios from "axios";
 async function getCityDetails(slug) {
     try {
         const { data: response } = await axios.get(
-            `https://admin.modernworldtravel.com/api/city/${slug}`
+            `https://admin.modernworldtravel.com/api/city/${slug}`,
+            {
+                cache: 'no-store',
+            }
         );
         return response.data;
     } catch (error) {

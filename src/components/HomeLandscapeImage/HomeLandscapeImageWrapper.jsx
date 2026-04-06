@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomeLandscapeImage } from "./HomeLandscapeImage";
@@ -11,6 +12,7 @@ export default async function HomeLandscapeImageWrapper() {
                 const res = await axios.get(LANDSCAPE_API_URL);
                 return res.data;
             },
+            staleTime: 0,
         });
         if (response?.status === true && Array.isArray(response.data)) {
             return (

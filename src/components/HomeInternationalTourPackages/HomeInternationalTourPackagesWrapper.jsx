@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { HomeInternationalTourPackages } from "./HomeInternationalTourPackages";
@@ -11,6 +12,7 @@ export default async function HomeInternationalTourPackagesWrapper() {
         const res = await axios.get('https://admin.modernworldtravel.com/api/home-international-tour');
         return res.data;
       },
+      staleTime: 0,
     });
 
     return <HomeInternationalTourPackages initialData={data} />;
