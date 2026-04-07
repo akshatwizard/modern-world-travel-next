@@ -96,7 +96,7 @@ export const HomePortraitVideo = ({ initialData, sectionInfo }) => {
                     </div>
                     <div className="text-center px-2">
                         {item.title && item.title.trim() && (
-                          <h6 className="text-[#555555] text-18 font-semibold mb-1 truncate">
+                          <h6 className="text-[#eb6605] text-18 md:truncate text-18 md:text-16 font-semibold mb-1">
                             {item.title}
                           </h6>
                         )}                                                

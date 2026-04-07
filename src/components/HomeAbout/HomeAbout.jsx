@@ -87,14 +87,14 @@ export const HomeAbout = () => {
                                                 </CarouselItem>
                                             ))}
                                         </CarouselContent>                            
-                                        <CarouselPrevious
-                                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                                            <CarouselPrevious
+                                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10 hidden md:flex"
                                                 size="icon"
                                             >
                                                 <ChevronLeft className="h-6 w-6" />
                                             </CarouselPrevious>
                                             <CarouselNext
-                                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10"
+                                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-white text-black border-none h-12 w-12 rounded-full shadow-lg z-10 hidden md:flex"
                                                 size="icon"
                                             >
                                                 <ChevronRight className="h-6 w-6" />
