@@ -68,7 +68,7 @@ export function HomeTrendingDestinations({ initialData }) {
                                                 />
                                             </div>
                                             <div className="featureCard__content text-center">
-                                                <h4 className="text-white text-18">{destination.name}</h4>
+                                                <h4 className="text-white text-18 md:text-16">{destination.name}</h4>
                                             </div>
                                         </Link>
                                     </CarouselItem>

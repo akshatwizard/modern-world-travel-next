@@ -14780,12 +14780,47 @@ button.gm-ui-hover-effect::after {
       line-height: 22px;
   }
   p, li, body{
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .tour-package-home .featureCard.-type-1 .featureCard__content .title-color{
+    font-size: 16px;
+    line-height: 22px;
   }
   
 }
 
 @media screen and (max-width: 991px) {
+  .chooseus-section .content_block_two .content-box{
+    padding: 1px 20px;
+  }
+  .footer.-type-1.-dark p {
+      color: white;
+      font-size: 16px;
+  }
+  .single-tour-inner .package-head-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  .inclusions-exclusions ul li, .inclusions-exclusions ol li{
+    font-size: 16px;
+  }
+  p, li{
+    margin: 0 0 6px;
+  }
+  .table-formatulli ul li{
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .bread-positin{
+    bottom: -30px;
+  }
+  .footer a,
+  .footer span,
+  .footer p{
+    font-size: 16px;
+  }
   .home-enqiry-from {
       margin-top: 20px;
   }
@@ -14821,6 +14856,10 @@ button.gm-ui-hover-effect::after {
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
+  }
+  .list-style-one li {
+    font-size: 16px;
+    line-height: 22px;
   }
   .speak-area{
     margin-top: -10px;

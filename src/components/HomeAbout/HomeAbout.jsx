@@ -38,7 +38,7 @@ export const HomeAbout = () => {
                                 <div className="about-home-content">
                                     <Heading
                                         level={1}
-                                        className="text-40 md:text-20 md:max-w-full max-w-xl font-extrabold md:mt-8 mt-4 mx-auto about-h-home-heading"
+                                        className="text-3xl md:text-4xl font-bold text-32 md:text-24 md:max-w-full max-w-xl font-extrabold md:mt-8 mt-4 mx-auto about-h-home-heading"
                                     >
                                         Modern World Travel —                            
                                         <span> Where Your  </span>

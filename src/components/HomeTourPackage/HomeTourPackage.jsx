@@ -14,7 +14,7 @@ export const HomeTourPackage = ({ initialData }) => {
                         <Heading
                             level={2}
                             text={initialData?.title || 'Varanasi Tour Packages for a Complete Travel Experience'}
-                            className="text-30 md:text-24 mb-1"
+                            className="text-30 md:text-24 mb-1 md:text-center"
                         />                        
                     </div>
                     {/* <div className="col-auto">
