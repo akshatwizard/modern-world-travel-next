@@ -14189,12 +14189,17 @@ button.gm-ui-hover-effect::after {
 .content_block_two .content-box h3 {
   position: relative;
   display: block;
-  font-size: 30px;
-  line-height: 40px;
-  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 10px;
   -webkit-text-fill-color:unset;
+}
+.content_block_two .content-box h4{
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
 }
 .clearfix::after {
   display: block;
@@ -14764,6 +14769,19 @@ button.gm-ui-hover-effect::after {
     padding: 10px 0;
     color: #ffff;
   }
+  .h-portait-image-section .port-img-title,
+  .h-landscape-image-section .land-img-title,
+  .gallery-masonry-container .p-portrait-img-title, 
+  .gallery-masonry-container .p-landscape-img-title,
+  .home-landscape-img-se h6,
+  .about-us-page h4,
+  .why-choose-us h4 {
+      font-weight: 400 !important;
+      line-height: 22px;
+  }
+  p, li, body{
+    font-size: 17px;
+  }
   
 }
 
@@ -14795,8 +14813,14 @@ button.gm-ui-hover-effect::after {
     margin-right: 0px;
   }
   .content_block_two .content-box h3{
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  .content_block_two .content-box h4{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
   }
   .speak-area{
     margin-top: -10px;

@@ -81,7 +81,7 @@ export const HomeWhyChoose = () => {
                         <Heading
                             level={4}
                             text="Seamless Travel Experiences Crafted for Every Traveler"
-                            className="text-20 text-white!"
+                            className="text-20 md:text-16 text-white!"
                             allowHTML={true}
                         />
                         <div className="btn-box mt-3">

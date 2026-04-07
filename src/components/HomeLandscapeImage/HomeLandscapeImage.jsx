@@ -166,8 +166,8 @@ export const HomeLandscapeImage = ({ initialData, sectionInfo }) => {
                                             </div>
                                             <div className="text-center px-2">
                                                 {item.title && item.title.trim() && (
-                                                    <div className="text-[#eb6605] font-semibold text-center mb-1 truncate text-18 land-img-title">
-                                                        {item.title} 
+                                                    <div className="text-[#eb6605] font-semibold text-center mb-1 md:truncate text-18 land-img-title md:text-16">
+                                                    {item.title}
                                                     </div>
                                                 )}
                                             </div>
