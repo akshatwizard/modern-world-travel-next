@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { title, name, phone, email, message, source } = body;
+    const { title, name, phone, email, message, source, currenturl } = body;
     if (!name || !phone) {
       return Response.json(
         { error: "Missing required fields" },
@@ -29,6 +29,7 @@ export async function POST(request) {
         email={email}
         message={message}
         source={source}
+          currenturl = {currenturl}
       />,
     );
     const { error } = await resend.emails.send({
