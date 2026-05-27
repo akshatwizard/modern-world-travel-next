@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
 import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 export default function ItineraryOrTourPackagePage({initialData}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedTour, setSelectedTour] = useState(null);
-    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
+    const pathname = usePathname();
+
+    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, currenturl, exclusions,  for_daywise = [], cover_city = []} = initialData;
     return (
         <>
             <BreadcrumbHeader
@@ -169,6 +172,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                 isOpen={isModalOpen}
                 title={selectedTour?.title}
                 duration={selectedTour?.duration}
+                currentUrl={currenturl || pathname} 
                 onClose={() => setIsModalOpen(false)}
             />
         </>
