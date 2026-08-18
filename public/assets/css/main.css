@@ -14677,6 +14677,9 @@ button.gm-ui-hover-effect::after {
   font-size: 18px;
   font-weight: 500;
 }
+.blog_details_page p{
+  margin: 0 0 10px;
+}
 .blog-list-container .blog-list-title{
   font-size: 20px;
   line-height: 25px;
