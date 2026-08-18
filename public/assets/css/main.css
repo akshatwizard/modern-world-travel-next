@@ -7418,7 +7418,7 @@ h1, h2, h3{
   padding-top: 5px !important;
   padding-bottom: 5px !important;
 }
-
+/* 
 .px-5 {
   padding-left: 5px !important;
   padding-right: 5px !important;
@@ -7426,7 +7426,7 @@ h1, h2, h3{
 
 .pt-5 {
   padding-top: 5px !important;
-}
+} */
 
 .pb-5 {
   padding-bottom: 5px !important;
@@ -11161,10 +11161,10 @@ h1, h2, h3{
 .rounded-200 {
   border-radius: 200px !important;
 }
-
+/* 
 .rounded-full {
   border-radius: 100%;
-}
+} */
 
 @media (max-width: 767px) {
   .md\:rounded-0 {
@@ -11331,10 +11331,10 @@ h1, h2, h3{
     position: unset !important;
   }
 }
-
+/* 
 .absolute {
   position: absolute;
-}
+} */
 
 .z--1 {
   z-index: -1 !important;
