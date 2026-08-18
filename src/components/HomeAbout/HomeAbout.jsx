@@ -51,10 +51,10 @@ export const HomeAbout = () => {
                                         </p>
                                     </div>
                                     <div className="mt-3 d-flex gap-3">
-                                        <Link href="/about-us" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white">
+                                        <Link href="/about-us" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color1 text-white rounded-md hover:!text-white text-[14px]!">
                                             Read More 
                                         </Link>
-                                        <Link href="/varanasi-airport-services" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color2 text-white rounded-md hover:!text-white">
+                                        <Link href="/varanasi-airport-services" className="py-2! px-5! inline-block tracking-wide align-middle duration-500 text-base text-center bg-logo-color2 text-white rounded-md hover:!text-white text-[14px]!">
                                             Varanasi Airport Services
                                         </Link>
                                     </div>
