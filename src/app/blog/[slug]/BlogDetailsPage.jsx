@@ -72,7 +72,7 @@ export default function BlogDetailsPage({ initialData }) {
                                             )}
                                             {Array.isArray(associated_itinarery) && associated_itinarery.length > 0 && (
                                                 <div className="md:mt-5 mt-[10px]">
-                                                    <h5 className="text-xl md:text-2xl font-semibold text-[#004d91]! mb-4 font-bold">
+                                                    <h5 className="text-xl md:text-2xl font-semibold text-[#004d91]! mb-4 font-bold!">
                                                         Related Itineraries
                                                     </h5>
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
