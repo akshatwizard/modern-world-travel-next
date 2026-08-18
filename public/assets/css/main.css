@@ -14664,18 +14664,19 @@ button.gm-ui-hover-effect::after {
 }
 .blog_details_page h3{
   font-size: 22px;
+  font-weight: 300;
 }
 .blog_details_page h4{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .blog_details_page h5{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .blog_details_page h6{
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .blog_details_page p{
   margin: 0 0 10px;
