@@ -69,9 +69,9 @@ export function Footer({ initialData }) {
                                     <Link className="d-block fw-500" href="/international-tour-package">
                                         International Tour Packages
                                     </Link>
-                                    <Link className="d-block fw-500" href="#">
+                                    {/* <Link className="d-block fw-500" href="#">
                                         Tour Packages in Varanasi
-                                    </Link>
+                                    </Link> */}
                                     <Link className="d-block fw-500" href="/blog">
                                         Blog
                                     </Link>
@@ -165,7 +165,7 @@ export function Footer({ initialData }) {
                 <div className="border-b border-gray-300 w-full h-px w-0.5"></div>
                 <div className="container">
                     <div className="footer__bottom">
-                        <div className="row justify-center items-center">                           
+                        {/* <div className="row justify-center items-center">                           
                             <div className="col-auto">
                                 <div className="footer__links d-flex items-center gap-1 lg:gap-4 md:gap-1">
                                     <a href="#" className="text-gray-400! text-14 transition-colors">
@@ -181,7 +181,7 @@ export function Footer({ initialData }) {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row justify-center mt-3">
                             <div className="col-12 text-center">
                                 <p className="text-gray-500 text-xs">
