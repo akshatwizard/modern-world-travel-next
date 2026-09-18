@@ -3,7 +3,12 @@ import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
 import Link from 'next/link';
 export default function TourLocationPage({ initialData }) {
-    const { tour_location = [], title, image} = initialData;
+    const {
+        tour_location = [],
+        title,
+        image,
+        tour_category_des = ''
+    } = initialData;
     return (
         <>
             <BreadcrumbHeader
@@ -14,7 +19,17 @@ export default function TourLocationPage({ initialData }) {
                 subtitle=""
             />
             <section className="layout-pt-xl layout-pb-xl destination-list-section">
-                <div className="container animated">                    
+                <div className="container animated">
+                    <div className="w-full mb-10 text-center">
+                        {tour_category_des && (
+                            <div
+                                className="tour-category-description"
+                                dangerouslySetInnerHTML={{
+                                    __html: tour_category_des
+                                }}
+                            />
+                        )}
+                    </div>                       
                     <div className="row y-gap-30 pt-40 sm:pt-20">
                         {tour_location.map((tour, index) => (
                             <div className="col-lg-4 col-sm-6 is-in-view" key={tour.nid || index}>
@@ -76,8 +91,6 @@ export default function TourLocationPage({ initialData }) {
                     </div>
                 </div>
             </section>
-
-
         </>
     )
 }
