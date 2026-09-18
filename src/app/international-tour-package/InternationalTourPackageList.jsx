@@ -20,7 +20,7 @@ export function InternationalTourPackageList({ initialData }) {
             />
             <section className="layout-pt-xl layout-pb-xl international-tour-container">
                 <div className="container">
-                     <div className="w-full mb-10 text-center">
+                    <div className="w-full mb-10 text-center">
                         <p className="text-16 text-light-2 leading-relaxed mb-4">
                             Looking to travel beyond India? Modern World Travel puts together international holidays that mix culture, nature, and comfort, without the stress of planning everything yourself. Every package below is built around a fixed itinerary, so you know your hotels, sightseeing, and transport are sorted before you leave home.
                         </p>
