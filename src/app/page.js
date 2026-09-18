@@ -17,7 +17,7 @@ import { BannerForm } from "@/components/BannerForm/BannerForm";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
 export const metadata = {
   title:
-    "Modern World Travel - Trusted Travel Agency in Varanasi | Book Holiday Packages",
+    "Modern World Travel - Travel Agency in Varanasi",
   description:
     "Modern World Travel is a trusted travel agency in Varanasi offering domestic & international holiday packages, hotel bookings, and customized tour packages. Start your perfect journey today!",
   keywords:

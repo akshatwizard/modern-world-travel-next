@@ -1,7 +1,7 @@
 import ContactUsPage from './ContactUsPage';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 export const metadata = {
-    title: 'Contact Us - Modern World Travel | Get in Touch for Travel Inquiries',
+    title: 'Contact Us | Modern World Travel, Varanasi',
     description: 'Contact Modern World Travel in Varanasi for personalized holiday packages, hotel bookings, and travel services. Reach out for domestic and international tour inquiries.',
     keywords: 'contact Modern World Travel, travel agency Varanasi phone number, holiday packages inquiry, travel services contact, book tour Varanasi',
     authors: [{ name: 'Modern World Travel' }],

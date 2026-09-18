@@ -3,7 +3,7 @@ import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 export const metadata = {
-    title: 'About Us - Modern World Travel | Trusted Travel Agency in Varanasi',
+    title: 'About Us | Modern World Travel, Varanasi',
     description: 'Learn about Modern World Travel, a trusted travel agency in Varanasi offering personalized holiday packages, domestic & international tours, and exceptional travel experiences since establishment.',
     keywords: 'about Modern World Travel, travel agency Varanasi, holiday packages, domestic tours, international tours, travel company India',
     authors: [{ name: 'Modern World Travel' }],
