@@ -47,7 +47,6 @@ export async function generateMetadata({ params }) {
 
             description:
                 blog.meta_description ||
-                blog.intro ||
                 'Explore the Modern World Travel Blog for the latest travel insights, tips, and stories. Stay updated on domestic and international travel trends, destination guides, and expert advice.',
             alternates: {
                 canonical: `${baseUrl}/blog/${slug}`,
