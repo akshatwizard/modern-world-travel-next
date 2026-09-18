@@ -39,8 +39,8 @@ export async function generateMetadata({ params }) {
         }
         return {
             title:
-                data.meta_title - 'Modern World Travel' ||
-                `${data.title || "Experience"} - Modern World Travel`,
+                data.meta_title ||
+                `${data.title}`,
             description:
                 data.meta_description ||
                 `Explore ${data.title || "this Experience"} with Modern World Travel`,
