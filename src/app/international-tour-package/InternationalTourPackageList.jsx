@@ -19,7 +19,18 @@ export function InternationalTourPackageList({ initialData }) {
                 subtitle=""
             />
             <section className="layout-pt-xl layout-pb-xl international-tour-container">
-                <div className="container">                
+                <div className="container">
+                     <div className="w-full mb-10 text-center">
+                        <p className="text-16 text-light-2 leading-relaxed mb-4">
+                            Looking to travel beyond India? Modern World Travel puts together international holidays that mix culture, nature, and comfort, without the stress of planning everything yourself. Every package below is built around a fixed itinerary, so you know your hotels, sightseeing, and transport are sorted before you leave home.
+                        </p>
+                        <p className="text-16 text-light-2 leading-relaxed mb-4">
+                            Our Bhutan and Nepal trips take you through Himalayan monasteries, mountain towns, and quiet valleys, ideal if you want a slower, spiritual kind of holiday. If you'd rather relax on a beach or explore a big city, our Sri Lanka, Thailand, and Vietnam packages cover everything from tea gardens and ancient temples to nightlife and river cruises. For travellers who want a short, glamorous getaway, the Dubai itinerary combines desert safaris with skyline views and shopping.
+                        </p>
+                        <p className="text-16 text-light-2 leading-relaxed">
+                            Each tour can be customised for family trips, honeymoons, or small group travel. Speak to our team to adjust the nights, hotel category, or add extra sightseeing to any of these packages.
+                        </p>
+                    </div>                
                     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mobile-css-slider -w-300 gap-3 mt-8!">
                         {initialData && initialData.map((tour) => (
                             <div key={tour.nid} className="w-full h-full shadow-lg hover:shadow-2xl rounded-12">
