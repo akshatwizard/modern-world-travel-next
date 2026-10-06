@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
+import { redirect } from 'next/navigation';
 import ItineraryOrTourPackagePage from './ItineraryOrTourPackagePage';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getItineraryDetails(slug) {
@@ -57,34 +58,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-    const { slug } = await params; 
-    try {
-        const placeData = await getItineraryDetails(slug);
-        if (!placeData?.status) {
-            return (
-                <div className="section-blog-details padding-t-50 padding-b-100">
-                    <div className="container">
-                        <div className="text-center py-5">
-                            <h4>Itinerary Not Found</h4>
-                            <p>The requested Itinerary could not be found.</p>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
-        return <ItineraryOrTourPackagePage initialData={placeData} slug={slug} />;
-
-    } catch (error) {
-        return (
-            <div className="section-blog-details padding-t-50 padding-b-100">
-                <div className="container">
-                    <div className="text-center text-danger py-5">
-                        <h4>Error Loading Page</h4>
-                        <p>There was a problem loading the page. Please try again.</p>
-                    </div>
-                </div>
-            </div>
-        );
+    const { slug } = await params;
+    const placeData = await getItineraryDetails(slug);
+    if (!placeData?.status) {
+        redirect("/");
     }
+    return (
+        <ItineraryOrTourPackagePage
+            initialData={placeData}
+            slug={slug}
+        />
+    );
 }

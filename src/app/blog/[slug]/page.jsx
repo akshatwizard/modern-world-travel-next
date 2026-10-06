@@ -2,6 +2,7 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
+import { redirect } from 'next/navigation';
 import BlogDetailsPage from './BlogDetailsPage';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
@@ -66,37 +67,14 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { slug } = await params;
-    try {
-        const response = await getBlogDetails(slug);
-        if (!response?.status || !response?.data) {
-            return (
-                <div className="section-blog-details padding-t-50 padding-b-100">
-                    <div className="container">
-                        <div className="text-center py-5">
-                            <h4>Blog Not Found</h4>
-                            <p>The requested blog could not be found.</p>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
-        return (
-            <BlogDetailsPage
-                initialData={response.data}
-                slug={slug}
-            />
-        );
-    } catch (error) {
-        return (
-            <div className="section-blog-details padding-t-50 padding-b-100">
-                <div className="container">
-                    <div className="text-center text-danger py-5">
-                        <h4>Error Loading Page</h4>
-                        <p>There was a problem loading the page. Please try again.</p>
-                    </div>
-                </div>
-            </div>
-        );
+    const response = await getBlogDetails(slug);
+    if (!response?.status || !response?.data) {
+        redirect("/");
     }
+    return (
+        <BlogDetailsPage
+            initialData={response.data}
+            slug={slug}
+        />
+    );
 }
