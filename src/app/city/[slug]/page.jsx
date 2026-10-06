@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+import { redirect } from "next/navigation";
 export const revalidate = 0;
 import React from 'react';
 import CityPage from './CityPage';
@@ -55,34 +56,9 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { slug } = await params;
-
-    try {
-        const placeData = await getCityDetails(slug);
-
-        if (!placeData?.status || !placeData.city) {
-            return (
-                <div className="section-blog-details padding-t-50 padding-b-100">
-                    <div className="container">
-                        <div className="text-center py-5">
-                            <h4>City Not Found</h4>
-                            <p>The requested city could not be found.</p>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
-        return <CityPage initialData={placeData} slug={slug} />;
-    } catch (error) {
-        return (
-            <div className="section-blog-details padding-t-50 padding-b-100">
-                <div className="container">
-                    <div className="text-center text-danger py-5">
-                        <h4>Error Loading Page</h4>
-                        <p>There was a problem loading the page. Please try again.</p>
-                    </div>
-                </div>
-            </div>
-        );
+    const placeData = await getCityDetails(slug);
+    if (!placeData?.status || !placeData.city) {
+        redirect("/");
     }
+    return <CityPage initialData={placeData} slug={slug} />;
 }
