@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 import React from 'react';
 import DestinationDetailsPage from './DestinationDetailsPage';
+import { redirect } from 'next/navigation';
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 async function getDestinationDetails(slug1, slug2) {
     try {
@@ -59,37 +60,15 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { slug1, slug2 } = await params;
-    try {
-        const placeData = await getDestinationDetails(slug1, slug2);
-        if (!placeData?.status) {
-            return (
-                <div className="section-blog-details padding-t-50 padding-b-100">
-                    <div className="container">
-                        <div className="text-center py-5">
-                            <h4>Destination Not Found</h4>
-                            <p>The requested destination could not be found.</p>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-        return (
-            <DestinationDetailsPage
-                initialData={placeData}
-                slug1={slug1}
-                slug2={slug2}
-            />
-        );
-    } catch (error) {
-        return (
-            <div className="section-blog-details padding-t-50 padding-b-100">
-                <div className="container">
-                    <div className="text-center text-danger py-5">
-                        <h4>Error Loading Page</h4>
-                        <p>There was a problem loading the page. Please try again.</p>
-                    </div>
-                </div>
-            </div>
-        );
+    const placeData = await getDestinationDetails(slug1, slug2);
+    if (!placeData?.status) {
+        redirect("/");
     }
+    return (
+        <DestinationDetailsPage
+            initialData={placeData}
+            slug1={slug1}
+            slug2={slug2}
+        />
+    );
 }

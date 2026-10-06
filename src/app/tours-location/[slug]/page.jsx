@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+import { redirect } from "next/navigation";
 export const revalidate = 0;
 import React from 'react';
 import TourLocationPage from './TourLocationPage';
@@ -55,32 +56,9 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { slug } = await params;
-    try {
-        const placeData = await getTourLocationDetails(slug);
-        //console.log("tour location", slug);
-        if (!placeData?.status) {
-            return (
-                <div className="section-blog-details padding-t-50 padding-b-100">
-                    <div className="container">
-                        <div className="text-center py-5">
-                            <h4>Tour Location Not Found</h4>
-                            <p>The requested tour location could not be found.</p>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-        return <TourLocationPage initialData={placeData} slug={slug} />;
-    } catch (error) {
-        return (
-            <div className="section-blog-details padding-t-50 padding-b-100">
-                <div className="container">
-                    <div className="text-center text-danger py-5">
-                        <h4>Error Loading Page</h4>
-                        <p>There was a problem loading the page. Please try again.</p>
-                    </div>
-                </div>
-            </div>
-        );
+    const placeData = await getTourLocationDetails(slug);
+    if (!placeData?.status) {
+        redirect("/");
     }
+    return <TourLocationPage initialData={placeData} slug={slug} />;
 }
