@@ -14374,13 +14374,12 @@ button.gm-ui-hover-effect::after {
     font-weight: 500;
 }
 
-.single-tour-inner {
+/* .single-tour-inner {
     background-color: #f5f4f4;
-    /* border-bottom: 3px solid #0791BE; */
     margin-bottom: 50px;
     padding: 15px;
     border-radius: 10px;
-}
+} */
 .destination-table {
     margin-top: 30px;
 }

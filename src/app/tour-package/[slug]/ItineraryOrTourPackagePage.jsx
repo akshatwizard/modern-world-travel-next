@@ -87,96 +87,58 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                     <div className="container">
                         <div className="row justify-content-md-center">
                             <div className="col-lg-8">
-                                <div className="single-tour-inner">
+                                <div className="single-tour-inner space-y-8">
                                     {highlights && (
-                                        <div
-                                            className="package-head-text"
-                                            dangerouslySetInnerHTML={{ __html: highlights }}
-                                        />
+                                        <div className="package-head-text rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
+                                            <div
+                                                className="text-sm leading-relaxed text-gray-600 md:text-base"
+                                                dangerouslySetInnerHTML={{ __html: highlights }}
+                                            />
+                                        </div>
                                     )}
 
-                                    {/* {for_daywise.length > 0 && (
-                                        <div id="itinerary" className="itinerary-timeline-wrap">
-                                            <ul>
-                                                {for_daywise.map((day, index) => (
-                                                    <li key={day.nid || index}>
-                                                        <div className="timeline-content">
-                                                            <div className="day_wise">
-                                                                <div className="destination-time-title">
-                                                                    <div className="day-count text-xl md:text-2xl font-semibold text-20 text-white fw-500 table-title">
-                                                                        Day {index + 1}
-                                                                    </div>
-                                                                </div>
-                                                                <h4 className="text-20 md:text-2xl font-semibold text-20 text-[#004d91]! fw-600">
-                                                                    {day.day_title}
-                                                                </h4>
-                                                            </div>
-                                                            {day.day_description && (
-                                                                <span>
-                                                                    <div className="table-formatulli">
-                                                                        <div dangerouslySetInnerHTML={{ __html: day.day_description }} />
-                                                                    </div>
-                                                                </span>
-                                                            )}
-                                                            {day.destination?.length > 0 && (
-                                                                <div className="destination-inner destination-four-column on_this_day_cover">
-                                                                    <h3>On this day, we are covering</h3>
-                                                                    <div className="row">
-                                                                        {day.destination.map(dest => (
-                                                                            <div className="col-lg-4 col-sm-6" key={dest.nid}>
-                                                                                <Link href={`/destination/${dest.city_url}/${dest.destination_url}`}>
-                                                                                    <div className="desti-item text-center this-day-item">
-                                                                                        <div className="day-item_header">
-                                                                                            <div className="tourCard__image ratio ratio-28:20 desti-image">
-                                                                                                <img
-                                                                                                    src={dest.destination_image}
-                                                                                                    alt={dest.title || ""}
-                                                                                                    className="img-ratio rounded-12 card-img-top"
-                                                                                                />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div className="desti-content">
-                                                                                            <div className="meta-cat">
-                                                                                                <h5>{dest.title}</h5>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </Link>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                    {/* ─── Inclusions ──────────────────────────────── */}
+                                    {inclusions && (
+                                        <div className="inclusions rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
+                                            <h5 className="mb-5 flex items-center gap-2 text-2xl font-semibold text-[#eb6605]!">
+                                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
+                                                    ✓
+                                                </span>
+                                                Inclusions
+                                            </h5>
+                                            <div
+                                                className="list-disc list-inside space-y-2 text-sm leading-relaxed text-gray-600 md:text-base"
+                                                dangerouslySetInnerHTML={{ __html: inclusions }}
+                                            />
                                         </div>
-                                    )} */}
-                                    <div className="page-content inclusions-exclusions space-y-6">
-                                        {inclusions && (
-                                            <div>
-                                                <h5 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
-                                                    Inclusions
-                                                </h5>
-                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: inclusions }} />
-                                            </div>
-                                        )}
-                                        {exclusions && (
-                                            <div>
-                                                <h6 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
-                                                    Exclusions
-                                                </h6>
-                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: exclusions }} />
-                                            </div>
-                                        )}
-                                    </div>
-                                    {itinerary_description && (
-                                        <div
-                                            className="itinerary_description"
-                                            dangerouslySetInnerHTML={{ __html: itinerary_description }}
-                                        />
                                     )}
+
+                                    {/* ─── Exclusions ──────────────────────────────── */}
+                                    {exclusions && (
+                                        <div className="exclusions rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
+                                            <h6 className="mb-5 flex items-center gap-2 text-2xl font-semibold text-[#eb6605]!">
+                                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-red-500">
+                                                    ✕
+                                                </span>
+                                                Exclusions
+                                            </h6>
+                                            <div
+                                                className="list-disc list-inside space-y-2 text-sm leading-relaxed text-gray-600 md:text-base"
+                                                dangerouslySetInnerHTML={{ __html: exclusions }}
+                                            />
+                                        </div>
+                                    )}
+
+                                    {/* ─── Itinerary Description ───────────────────── */}
+                                    {itinerary_description && (
+                                        <div className="itinerary_description rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
+                                            <div
+                                                className="text-sm leading-relaxed text-gray-600 md:text-base"
+                                                dangerouslySetInnerHTML={{ __html: itinerary_description }}
+                                            />
+                                        </div>
+                                    )}
+
                                 </div>
                             </div>
                             <div className="col-lg-4 relative">                                
