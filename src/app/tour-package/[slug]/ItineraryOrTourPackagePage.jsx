@@ -10,7 +10,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
     const [selectedTour, setSelectedTour] = useState(null);
     const pathname = usePathname();
 
-    const {title, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
+    const {title, itinerary_description, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
     return (
         <>
             <BreadcrumbHeader
@@ -32,6 +32,7 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                             dangerouslySetInnerHTML={{ __html: highlights }}
                                         />
                                     )} 
+                                     
                                     {for_daywise.length > 0 && (                                   
                                     <div className="itinerary-timeline-wrap">
                                         <ul>
@@ -108,6 +109,12 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                             </div>
                                         )}
                                     </div>
+                                    {itinerary_description && (
+                                        <div 
+                                            className="itinerary_description"
+                                            dangerouslySetInnerHTML={{ __html: itinerary_description }}
+                                        />
+                                    )}
                                 </div>
                             </div>
                             <div className="col-lg-4 relative">
