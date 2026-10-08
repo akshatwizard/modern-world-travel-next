@@ -7,6 +7,9 @@ import Provider from "@/lib/provider";
 import HeaderWrapper from "@/components/Header/HeaderWrapper";
 import FooterWrapper from "@/components/Footer/FooterWrapper";
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.modernworldtravel.com"
+  ),
   title: "Modern World Travel Packages for Varanasi, India, International",
   description:
     "Spend your days as close the Ganges & the ghats as you can please, you will not regret it. Take one of our Highlight Varanasi Tour Packages",
