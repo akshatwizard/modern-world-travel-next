@@ -2,24 +2,86 @@
 import React, { useEffect, useState } from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import {
+    Clock,
+    CalendarDays,
+    MapPin,
+    Map,
+    ArrowRight ,
+    Sparkles,
+    CheckCircle2,
+    XCircle,
+} from "lucide-react";
 import EnquiryModal from '@/components/EnquiryModal/EnquiryModal';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-export default function ItineraryOrTourPackagePage({initialData}) {
+export default function ItineraryOrTourPackagePage({ initialData }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedTour, setSelectedTour] = useState(null);
     const pathname = usePathname();
 
-    const {title, itinerary_description, duration, desktop_banner_image, mobile_banner_image, meta_title, meta_desc, highlights, inclusions, exclusions,  for_daywise = [], cover_city = []} = initialData;
+    const { title, itinerary_description, duration, desktop_banner_image, mobile_banner_image, highlights, inclusions, exclusions, for_daywise = [], cover_city = [] } = initialData;
     return (
         <>
-            <BreadcrumbHeader
+            {/* <BreadcrumbHeader
                 desktopImage={desktop_banner_image || "/assets/img/hero/1.png"}
                 mobileImage={mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={title}
                 subtitle={duration}
-            />
+            /> */}
+            {/* ===== Hero: Image + Content ===== */}
+            <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
+                <div className="container mx-auto px-2 py-8 md:py-20">
+                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                        <div className="order-1">
+                            <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#eb6605]/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[#eb6605]">
+                                <Map className="h-3.5 w-3.5" />
+                                Tour Package
+                            </span>
+                            <h1 className="mb-4 text-3xl font-bold leading-tight text-[#004d91] md:text-5xl">
+                                {title}
+                            </h1>
+                            <div className="mb-6 flex flex-wrap gap-3">
+                                {duration && (
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                        <CalendarDays className="h-4 w-4 text-[#eb6605]" />
+                                        {duration}
+                                    </span>
+                                )}
+                                {Array.isArray(cover_city) && cover_city.length > 0 && (
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                        <MapPin className="h-4 w-4 text-[#eb6605]" />
+                                        {cover_city.length} Cities Covered
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                        <div className="relative order-2">
+                            <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
+                            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                                <img
+                                    src={desktop_banner_image || "/assets/img/hero/1.png"}
+                                    alt={title || "Tour package"}
+                                    className="hidden h-[420px] w-full object-cover md:block"
+                                />
+                                <img
+                                    src={mobile_banner_image || desktop_banner_image || "/assets/img/hero/1.png"}
+                                    alt={title || "Tour package"}
+                                    className="h-64 w-full object-cover md:hidden"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                {duration && (
+                                    <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-[#004d91] shadow backdrop-blur">
+                                        <Clock className="h-4 w-4 text-[#eb6605]" strokeWidth={2.25} />
+                                        {duration}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="tour_package_section">
                 <div className="single-tour-section">
                     <div className="container">
@@ -27,77 +89,77 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                             <div className="col-lg-8">
                                 <div className="single-tour-inner">
                                     {highlights && (
-                                        <div 
+                                        <div
                                             className="package-head-text"
                                             dangerouslySetInnerHTML={{ __html: highlights }}
                                         />
-                                    )} 
-                                     
-                                    {for_daywise.length > 0 && (                                   
-                                    <div className="itinerary-timeline-wrap">
-                                        <ul>
-                                            {for_daywise.map((day, index) => (
-                                            <li key={day.nid || index}>
-                                                <div className="timeline-content">
-                                                    <div className="day_wise">
-                                                        <div className="destination-time-title">
-                                                            <div className="day-count text-xl md:text-2xl font-semibold text-20 text-white fw-500 table-title">
-                                                                Day {index + 1}
-                                                            </div>
-                                                        </div>
-                                                        <h4 className="text-20 md:text-2xl font-semibold text-20 text-[#004d91]! fw-600">
-                                                            {day.day_title}
-                                                        </h4>
-                                                    </div>
-                                                    {day.day_description && (
-                                                        <span>
-                                                            <div className="table-formatulli">
-                                                                <div dangerouslySetInnerHTML={{ __html: day.day_description }} />
-                                                            </div>
-                                                        </span>
-                                                    )}
-                                                    {day.destination?.length > 0 && (
-                                                    <div className="destination-inner destination-four-column on_this_day_cover">
-                                                        <h3>On this day, we are covering</h3>
-                                                        <div className="row">
-                                                            {day.destination.map(dest => (
-                                                            <div className="col-lg-4 col-sm-6" key={dest.nid}>
-                                                                <Link href={`/destination/${dest.city_url}/${dest.destination_url}`}>
-                                                                    <div className="desti-item text-center this-day-item">
-                                                                        <div className="day-item_header">
-                                                                            <div className="tourCard__image ratio ratio-28:20 desti-image">
-                                                                                <img
-                                                                                    src={dest.destination_image}
-                                                                                    alt={dest.title || ""}
-                                                                                    className="img-ratio rounded-12 card-img-top"
-                                                                                />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="desti-content">
-                                                                            <div className="meta-cat">
-                                                                                <h5>{dest.title}</h5>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </Link>
-                                                            </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                    )}
-                                                </div>
-                                            </li>                                            
-                                            ))}
-                                        </ul>
-                                    </div>
                                     )}
+
+                                    {/* {for_daywise.length > 0 && (
+                                        <div id="itinerary" className="itinerary-timeline-wrap">
+                                            <ul>
+                                                {for_daywise.map((day, index) => (
+                                                    <li key={day.nid || index}>
+                                                        <div className="timeline-content">
+                                                            <div className="day_wise">
+                                                                <div className="destination-time-title">
+                                                                    <div className="day-count text-xl md:text-2xl font-semibold text-20 text-white fw-500 table-title">
+                                                                        Day {index + 1}
+                                                                    </div>
+                                                                </div>
+                                                                <h4 className="text-20 md:text-2xl font-semibold text-20 text-[#004d91]! fw-600">
+                                                                    {day.day_title}
+                                                                </h4>
+                                                            </div>
+                                                            {day.day_description && (
+                                                                <span>
+                                                                    <div className="table-formatulli">
+                                                                        <div dangerouslySetInnerHTML={{ __html: day.day_description }} />
+                                                                    </div>
+                                                                </span>
+                                                            )}
+                                                            {day.destination?.length > 0 && (
+                                                                <div className="destination-inner destination-four-column on_this_day_cover">
+                                                                    <h3>On this day, we are covering</h3>
+                                                                    <div className="row">
+                                                                        {day.destination.map(dest => (
+                                                                            <div className="col-lg-4 col-sm-6" key={dest.nid}>
+                                                                                <Link href={`/destination/${dest.city_url}/${dest.destination_url}`}>
+                                                                                    <div className="desti-item text-center this-day-item">
+                                                                                        <div className="day-item_header">
+                                                                                            <div className="tourCard__image ratio ratio-28:20 desti-image">
+                                                                                                <img
+                                                                                                    src={dest.destination_image}
+                                                                                                    alt={dest.title || ""}
+                                                                                                    className="img-ratio rounded-12 card-img-top"
+                                                                                                />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className="desti-content">
+                                                                                            <div className="meta-cat">
+                                                                                                <h5>{dest.title}</h5>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </Link>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )} */}
                                     <div className="page-content inclusions-exclusions space-y-6">
                                         {inclusions && (
                                             <div>
                                                 <h5 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
                                                     Inclusions
                                                 </h5>
-                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: inclusions }} />                                                
+                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: inclusions }} />
                                             </div>
                                         )}
                                         {exclusions && (
@@ -105,21 +167,68 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                                 <h6 className="text-24 md:text-22 text-[#eb6605]! fw-600 mb-5">
                                                     Exclusions
                                                 </h6>
-                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: exclusions }} />  
+                                                <div className="list-disc list-inside space-y-1" dangerouslySetInnerHTML={{ __html: exclusions }} />
                                             </div>
                                         )}
                                     </div>
                                     {itinerary_description && (
-                                        <div 
+                                        <div
                                             className="itinerary_description"
                                             dangerouslySetInnerHTML={{ __html: itinerary_description }}
                                         />
                                     )}
                                 </div>
                             </div>
-                            <div className="col-lg-4 relative">
-                                
+                            <div className="col-lg-4 relative">                                
                                 <div className="sticky top-20">
+                                    {for_daywise.length > 0 && (
+                                    <div id="itinerary" className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg mb-3">
+                                        <div className="flex items-center gap-3 bg-gradient-to-r from-[#004d91] to-[#0a6cc4] px-3 py-3">                                        
+                                            <div>
+                                               <h2
+                                                    className="text-24 text-white"
+                                                    style={{
+                                                        color: "#fff",
+                                                        backgroundImage: "unset",
+                                                        WebkitTextFillColor: "unset",
+                                                    }}
+                                                    >
+                                                    Day Wise Itinerary
+                                                </h2>
+                                                <p className="text-xs text-white">Your journey, day by day</p>
+                                            </div>                                            
+                                        </div>
+                                        <ul className="divide-y divide-gray-100">
+                                        {for_daywise.map((day, index) => (
+                                            <li key={day.nid || index}>
+                                            <Link
+                                                href={`#day-${index + 1}`}
+                                                className="group flex items-center gap-4 px-3 py-3 transition-colors hover:bg-orange-50/60"
+                                            >
+                                                {/* Day number badge */}
+                                                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-sm font-bold text-[#eb6605] ring-1 ring-orange-200 transition-all duration-300 group-hover:bg-[#eb6605] group-hover:text-white group-hover:ring-orange-100">
+                                                {String(index + 1).padStart(2, "0")}
+                                                </span>
+
+                                                {/* Title */}
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="text-[11px] font-semibold uppercase tracking-wider text-[#eb6605]">
+                                                        Day {index + 1}
+                                                    </div>
+                                                    <div className="line-clamp-2 text-sm font-semibold leading-5 text-[#004d91] group-hover:text-[#0a6cc4] md:text-base md:leading-6">
+                                                        {day.day_title}
+                                                    </div>
+                                                </div>
+
+                                                {/* Arrow */}
+                                                <ArrowRight className="h-5 w-5 flex-shrink-0 text-gray-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#eb6605]" />
+                                            </Link>
+                                            </li>
+                                        ))}
+                                        </ul>
+                                    </div>
+                                    )}
+
                                     {Array.isArray(cover_city) && cover_city.length > 0 && (
                                         <div className="sidebar -type-2">
                                             <div className="sidebar__item">
@@ -147,20 +256,19 @@ export default function ItineraryOrTourPackagePage({initialData}) {
                                         </div>
                                     )}
                                     <div className="book-this-tour bg-white rounded-xl shadow-lg border border-gray-100 p-2 md:p-2">
-                                        
                                         <div className="book_form_section">
                                             <div className="contactForm">
                                                 <div className="row y-gap-15">
                                                     <div className="col-12">
                                                         <button
-                                                        onClick={() => {
-                                                            setSelectedTour({
-                                                                title: title,
-                                                                duration: duration,
-                                                            });
-                                                            setIsModalOpen(true);
-                                                        }}
-                                                        className="button -md -dark-1 bg-accent-1 text-white col-12">
+                                                            onClick={() => {
+                                                                setSelectedTour({
+                                                                    title: title,
+                                                                    duration: duration,
+                                                                });
+                                                                setIsModalOpen(true);
+                                                            }}
+                                                            className="button -md -dark-1 bg-accent-1 text-white col-12">
                                                             Book This Tour
                                                         </button>
                                                     </div>
