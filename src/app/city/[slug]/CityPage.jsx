@@ -83,13 +83,13 @@ export default function CityPage({ initialData }) {
                                     {city.title}
                                 </span>
                             </nav>
-                            <Link
+                            {/* <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
                             >
                                 <ChevronLeft className="h-4 w-4" />
                                 Back to Home
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="relative order-2">
                             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
@@ -131,9 +131,11 @@ export default function CityPage({ initialData }) {
                                             {destinations.map((destination, index) => (
                                                 <div className="grid grid-cols-1 gap-3 city-slug" key={destination.nid || index}>
                                                     <div>
-                                                        <h4 className='text-20 md:text-2xl font-semibold text-20 text-[#004d91] fw-600'>
-                                                            {destination.title}
-                                                        </h4>
+                                                        <Link href={`/destination/${city.city_url}/${destination.url}`}>
+                                                            <h4 className='text-20 md:text-2xl font-semibold text-20 text-[#004d91] fw-600'>
+                                                                {destination.title}
+                                                            </h4>
+                                                        </Link>
                                                     </div>
                                                     {city.city_url && destination.url && (
                                                         <Link href={`/destination/${city.city_url}/${destination.url}`}>
