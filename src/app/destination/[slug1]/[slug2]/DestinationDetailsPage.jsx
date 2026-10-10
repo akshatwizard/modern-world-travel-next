@@ -1,6 +1,8 @@
 import React from 'react'
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import Link from 'next/link';
+import Image from 'next/image';
 export default function DestinationDetailsPage({ initialData }) {
     if (!initialData) return null;
     return (
