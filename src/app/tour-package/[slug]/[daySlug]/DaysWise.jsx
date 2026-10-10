@@ -41,6 +41,7 @@ export default function DaysWise({ day, itinerary, slug, allDays }) {
                                     </span>
                                 )}
                             </div>
+                            
                             <Link
                                 href={`/tour-package/${slug}`}
                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
@@ -50,23 +51,48 @@ export default function DaysWise({ day, itinerary, slug, allDays }) {
                             </Link>
                         </div>
                         <div className="relative order-2">
-                            <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
-                            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                                <img
-                                    src={itinerary.desktop_banner_image || "/assets/img/hero/1.png"}
-                                    alt={itinerary.title || "Tour banner"}
-                                    className="hidden h-[420px] w-full object-cover md:block"
-                                />
-                                <img
-                                    src={
-                                        itinerary.mobile_banner_image ||
-                                        itinerary.desktop_banner_image ||
-                                        "/assets/img/hero/1.png"
-                                    }
-                                    alt={itinerary.title || "Tour banner"}
-                                    className="h-64 w-full object-cover md:hidden"
-                                />
+                            <div className="relative">
+                                <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
+                                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                                    <img
+                                        src={itinerary.desktop_banner_image || "/assets/img/hero/1.png"}
+                                        alt={itinerary.title || "Tour banner"}
+                                        className="hidden h-[420px] w-full object-cover md:block"
+                                    />
+                                    <img
+                                        src={
+                                            itinerary.mobile_banner_image ||
+                                            itinerary.desktop_banner_image ||
+                                            "/assets/img/hero/1.png"
+                                        }
+                                        alt={itinerary.title || "Tour banner"}
+                                        className="h-64 w-full object-cover md:hidden"
+                                    />
+                                </div>
                             </div>
+                            {allDays?.length > 0 && (
+                                <div className="tw:mt-5">                                    
+                                    <div className="flex flex-wrap gap-2">
+                                        {allDays.map((d, index) => {
+                                            const dayNum = index + 1;
+                                            const isActive = dayNum === day.day_number;
+                                            return (
+                                                <Link
+                                                    key={d.nid || index}
+                                                    href={`/tour-package/${slug}/day-${dayNum}`}
+                                                    className={`group flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+                                                        isActive
+                                                            ? "bg-[#eb6605] text-white shadow-md ring-2 ring-orange-200"
+                                                            : "bg-white text-[#004d91] ring-1 ring-gray-200 hover:bg-orange-50 hover:text-[#eb6605] hover:ring-[#eb6605]"
+                                                    }`}
+                                                >                                                    
+                                                    Day {dayNum}
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

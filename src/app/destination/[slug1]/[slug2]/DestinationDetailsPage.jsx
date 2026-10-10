@@ -22,30 +22,30 @@ export default function DestinationDetailsPage({ initialData }) {
                             <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {initialData?.title}
                             </h1>
-                            {initialData?.city_title && (
+                            {initialData.dest_sub_heading && (
                                 <p className="mb-4 text-sm text-gray-600 md:text-base">
-                                    {initialData.city_title}
+                                    {initialData.dest_sub_heading}
                                 </p>
                             )}
                             <nav className="mb-6 hidden flex-wrap items-center gap-2 text-sm md:flex">
                                 <Link
-                                    href="/"
+                                    href={`/city/${initialData?.city_url}`}
                                     className="font-medium text-gray-500 transition-colors hover:text-[#eb6605]"
                                 >
-                                    Home
+                                   {initialData?.city_title}
                                 </Link>
                                 <span className="text-gray-400">/</span>
                                 <span className="line-clamp-1 max-w-[300px] font-semibold text-[#004d91]">
                                     {initialData?.title}
                                 </span>
                             </nav>
-                            <Link
+                            {/* <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
                             >
                                 <ChevronLeft className="h-4 w-4" />
                                 Back to Home
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="relative order-2">
                             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
@@ -73,7 +73,7 @@ export default function DestinationDetailsPage({ initialData }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            {initialData.dest_sub_heading && (
+                            {/* {initialData.dest_sub_heading && (
                                 <div className="sub-heading text-center">
                                     <Heading
                                         level={2}
@@ -81,7 +81,7 @@ export default function DestinationDetailsPage({ initialData }) {
                                         className="text-24 md:text-22 text-white fw-500 mb-10"
                                     />
                                 </div>
-                            )}
+                            )} */}
                             <div className="single-tour-inner blog-section">
                                 {initialData.destination_content && (
                                     <div

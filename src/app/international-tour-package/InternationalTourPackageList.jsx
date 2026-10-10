@@ -38,13 +38,13 @@ export function InternationalTourPackageList({ initialData }) {
                                     International Tour Package
                                 </span>
                             </nav>
-                            <Link
+                            {/* <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
                             >
                                 <ChevronLeft className="h-4 w-4" />
                                 Back to Home
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="relative order-2">
                             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
