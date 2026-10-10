@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import Link from 'next/link';
 
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { Fancybox as NativeFancybox } from '@fancyapps/ui';
