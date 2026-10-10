@@ -65,9 +65,9 @@ export default function GallerySlugPage({ initialData }) {
             /> */}
             <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
                 <div className="container mx-auto tw:px-2 tw:py-20">
-                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                    <div className="grid items-center gap-2 lg:grid-cols-2 lg:gap-14">
                         <div className="order-1">
-                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                            <h1 className="mb-2 md:tw-mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {section?.heading || "Gallery"}
                             </h1>
                             {section?.sub_heading && (

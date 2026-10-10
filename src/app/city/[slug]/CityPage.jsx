@@ -65,10 +65,10 @@ export default function CityPage({ initialData }) {
             /> */}
             <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
                 <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
-                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                    <div className="grid items-center gap-2 lg:grid-cols-2 lg:gap-14">
                         {/* ═══ LEFT: Content ═══ */}
                         <div className="order-1">
-                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                             <h1 className="mb-2 md:tw-mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                {city.title}
                             </h1>
                             <nav className="mb-6 hidden flex-wrap items-center gap-2 text-sm md:flex">

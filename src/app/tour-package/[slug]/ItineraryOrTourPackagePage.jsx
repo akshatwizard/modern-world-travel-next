@@ -33,13 +33,13 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
             {/* ===== Hero: Image + Content ===== */}
             <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
                 <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
-                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                    <div className="grid items-center gap-3 lg:grid-cols-2 lg:gap-14">
                         <div className="order-1">
                             <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#eb6605]/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[#eb6605]">
                                 <Map className="h-3.5 w-3.5" />
                                 Tour Package
                             </span> 
-                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                            <h1 className="mb-2 md:tw-mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {title}
                             </h1>
                             <div className="mb-6 flex flex-wrap gap-3">
