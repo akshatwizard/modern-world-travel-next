@@ -1,6 +1,19 @@
 import React from 'react'
 import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
+import Link from 'next/link';
+import {
+    ArrowLeft,
+    ArrowRight,
+    MapPin,
+    ChevronRight,
+    Sparkles,
+    CalendarDays,
+    Clock,
+    ChevronLeft,
+    XCircle,
+} from "lucide-react";
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 export const metadata = {
     title: 'About Us | Modern World Travel, Varanasi',
@@ -37,13 +50,59 @@ export const metadata = {
 export default function AboutUsPage() {
     return (
         <>
-            <BreadcrumbHeader
+            {/* <BreadcrumbHeader
                 desktopImage="/assets/img/pageHeader/1.jpg"
                 mobileImage="/assets/img/pageHeader/1.jpg"
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title="About Us"
                 subtitle=""
-            />
+            /> */}
+            <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
+                <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
+                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                        {/* ═══ LEFT: Content ═══ */}
+                        <div className="order-1">
+                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                                About Us
+                            </h1>
+                            <nav className="mb-6 hidden flex-wrap items-center gap-2 text-sm md:flex">
+                                <Link
+                                    href="/"
+                                    className="font-medium text-gray-500 transition-colors hover:text-[#eb6605]"
+                                >
+                                    Home
+                                </Link>
+                                <span className="text-gray-400">/</span>
+                                <span className="font-semibold text-[#004d91]">
+                                    About Us
+                                </span>
+                            </nav>
+                            <Link
+                                href="/"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
+                            >
+                                <ChevronLeft className="h-4 w-4" />
+                                Back to Home
+                            </Link>
+                        </div>
+                        <div className="relative order-2">
+                            <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
+                            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                                <img
+                                    src="/assets/img/pageHeader/1.jpg"
+                                    alt="About Us"
+                                    className="hidden h-[420px] w-full object-cover md:block"
+                                />
+                                <img
+                                    src="/assets/img/pageHeader/1.jpg"
+                                    alt="About Us"
+                                    className="h-64 w-full object-cover md:hidden"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="layout-pt-lg layout-pb-lg about-us-page">
                 <div className="container animated">
                     <div className="row y-gap-20 align-items-center">

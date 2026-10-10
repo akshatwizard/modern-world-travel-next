@@ -32,14 +32,14 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
             /> */}
             {/* ===== Hero: Image + Content ===== */}
             <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
-                <div className="container mx-auto px-2 py-8 md:py-20">
+                <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
                     <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
                         <div className="order-1">
                             <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#eb6605]/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[#eb6605]">
                                 <Map className="h-3.5 w-3.5" />
                                 Tour Package
                             </span> 
-                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-30 md:text-24">
+                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {title}
                             </h1>
                             <div className="mb-6 flex flex-wrap gap-3">
@@ -56,6 +56,20 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                     </span>
                                 )}
                             </div>
+                            <div className="mb-6 text-sm leading-relaxed text-gray-600 md:text-base">
+                                <div className="flex flex-wrap gap-2">
+                                    {cover_city.map((city, index) => (
+                                        <Link
+                                            key={city.nid || index}
+                                            href={`/city/${city.city_url}`}
+                                            className="group inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-white px-4 py-1.5 text-sm font-semibold text-[#004d91] shadow-sm transition-all hover:border-[#eb6605] hover:bg-[#eb6605] hover:text-white"
+                                        >
+                                            <MapPin className="h-3.5 w-3.5 text-[#eb6605] transition-colors group-hover:text-[#eb6605]" />
+                                            {city.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                         <div className="relative order-2">
                             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
@@ -69,14 +83,7 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                     src={mobile_banner_image || desktop_banner_image || "/assets/img/hero/1.png"}
                                     alt={title || "Tour package"}
                                     className="h-64 w-full object-cover md:hidden"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                {duration && (
-                                    <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-[#004d91] shadow backdrop-blur">
-                                        <Clock className="h-4 w-4 text-[#eb6605]" strokeWidth={2.25} />
-                                        {duration}
-                                    </span>
-                                )}
+                                />                                
                             </div>
                         </div>
                     </div>
@@ -96,6 +103,17 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                             />
                                         </div>
                                     )}
+
+                                    {/* ─── Itinerary Description ───────────────────── */}
+                                    {itinerary_description && (
+                                        <div className="itinerary_description rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
+                                            <div
+                                                className="text-sm leading-relaxed text-gray-600 md:text-base"
+                                                dangerouslySetInnerHTML={{ __html: itinerary_description }}
+                                            />
+                                        </div>
+                                    )}
+
 
                                     {/* ─── Inclusions ──────────────────────────────── */}
                                     {inclusions && (
@@ -125,16 +143,6 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                             <div
                                                 className="list-disc list-inside space-y-2 text-sm leading-relaxed text-gray-600 md:text-base"
                                                 dangerouslySetInnerHTML={{ __html: exclusions }}
-                                            />
-                                        </div>
-                                    )}
-
-                                    {/* ─── Itinerary Description ───────────────────── */}
-                                    {itinerary_description && (
-                                        <div className="itinerary_description rounded-2xl border border-gray-100 bg-[#f5f4f4] p-3 shadow-sm md:p-4">
-                                            <div
-                                                className="text-sm leading-relaxed text-gray-600 md:text-base"
-                                                dangerouslySetInnerHTML={{ __html: itinerary_description }}
                                             />
                                         </div>
                                     )}

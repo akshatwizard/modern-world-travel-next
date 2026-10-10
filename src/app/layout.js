@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./tailwind-prefixed.css";
 import { Suspense } from "react";
 import { TopToBottomButton } from "@/components/TopToBottomButton/TopToBottomButton";
 import { Header } from "@/components/Header/Header";

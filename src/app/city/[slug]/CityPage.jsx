@@ -4,7 +4,7 @@ import BreadcrumbHeader from '@/components/BreadcrumbHeader/BreadcrumbHeader';
 import { Heading } from '@/components/Heading/Heading';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Leaf, Star, Droplet, Flame, MapPin, Compass, Circle, Globe } from 'lucide-react';
+import { Leaf, Star, Droplet, Flame, MapPin, Compass, Circle, Globe,ChevronLeft } from 'lucide-react';
 import EnquiryVaranasiAirportModal from '@/components/EnquiryVaranasiAirportModal/EnquiryVaranasiAirportModal';
 
 const iconComponents = {
@@ -42,31 +42,77 @@ export default function CityPage({ initialData }) {
         setSelectedCity(title);
         setIsModalOpen(true);
     };
-
-    // Helper function to validate image URL
     const getValidImageUrl = (url, fallback = "/assets/modern-img/Vrindavan.jpg") => {
         if (!url || typeof url !== 'string' || url.trim() === '') {
             return fallback;
         }
-        // Check if it's a valid URL or path
         try {
             new URL(url);
             return url;
         } catch {
-            // If invalid URL, return fallback
             return fallback;
         }
     };
 
     return (
         <>
-            <BreadcrumbHeader
+            {/* <BreadcrumbHeader
                 desktopImage={city.desktop_banner_image || "/assets/img/hero/1.png"}
                 mobileImage={city.mobile_banner_image || "/assets/img/hero/1.png"}
                 shapeImage="/assets/img/hero/1/shape.svg"
                 title={city.title}
                 subtitle=""
-            />
+            /> */}
+            <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
+                <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
+                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                        {/* ═══ LEFT: Content ═══ */}
+                        <div className="order-1">
+                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                               {city.title}
+                            </h1>
+                            <nav className="mb-6 hidden flex-wrap items-center gap-2 text-sm md:flex">
+                                <Link
+                                    href="/"
+                                    className="font-medium text-gray-500 transition-colors hover:text-[#eb6605]"
+                                >
+                                    Home
+                                </Link>
+                                <span className="text-gray-400">/</span>
+                                <span className="line-clamp-1 max-w-[300px] font-semibold text-[#004d91]">
+                                    {city.title}
+                                </span>
+                            </nav>
+                            <Link
+                                href="/"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
+                            >
+                                <ChevronLeft className="h-4 w-4" />
+                                Back to Home
+                            </Link>
+                        </div>
+                        <div className="relative order-2">
+                            <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
+                            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                                <img
+                                    src={city.desktop_banner_image || "/assets/img/hero/1.png"}
+                                    alt={city.title || "City banner"}
+                                    className="hidden h-[420px] w-full object-cover md:block"
+                                />
+                                <img
+                                    src={
+                                        city.mobile_banner_image ||
+                                        city.desktop_banner_image ||
+                                        "/assets/img/hero/1.png"
+                                    }
+                                    alt={city.title || "City banner"}
+                                    className="h-64 w-full object-cover md:hidden"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="tour_package_section">
                 <div className="single-tour-section">
                     <div className="container">

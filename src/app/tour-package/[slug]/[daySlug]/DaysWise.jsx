@@ -16,58 +16,57 @@ import {
 export default function DaysWise({ day, itinerary, slug, allDays }) {
     return (
         <>
-            <section className="relative">
-                <div className="relative h-[280px] w-full overflow-hidden md:h-[400px]">
-                    <img
-                        src={itinerary.desktop_banner_image || "/assets/img/hero/1.png"}
-                        alt={itinerary.title || "Tour banner"}
-                        className="hidden h-full w-full object-cover md:block"
-                    />
-                    <img
-                        src={
-                            itinerary.mobile_banner_image ||
-                            itinerary.desktop_banner_image ||
-                            "/assets/img/hero/1.png"
-                        }
-                        alt={itinerary.title || "Tour banner"}
-                        className="h-full w-full object-cover md:hidden"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
-                    <div className="absolute inset-0 flex flex-col justify-end">
-                        <div className="container mx-auto max-w-6xl px-4 pb-6 md:pb-10">
-                            <Link
-                                href={`/tour-package/${slug}`}
-                                className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-white/25 md:text-sm"
-                            >
-                                <ChevronLeft className="h-3.5 w-3.5" />
-                                Back to {itinerary.title}
-                            </Link>
-                            <div className="mb-3 flex flex-wrap items-center gap-2">
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eb6605] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                                    <Sparkles className="h-3 w-3" />
-                                    {day.day}
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
-                                    <CalendarDays className="h-3 w-3" />
+            <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
+                <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
+                    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                        <div className="order-1">                            
+                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                                {day.day_title}
+                            </h1>
+                            <div className="mb-6 flex flex-wrap gap-3">
+                                <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                    <CalendarDays className="h-4 w-4 text-[#eb6605]" />
                                     Day {day.day_number} of {day.total_days}
                                 </span>
                                 {itinerary.duration && (
-                                    <span className="hidden items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md sm:inline-flex">
-                                        <Clock className="h-3 w-3" />
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                        <Clock className="h-4 w-4 text-[#eb6605]" />
                                         {itinerary.duration}
                                     </span>
                                 )}
+                                {itinerary.cover_city?.length > 0 && (
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                        <MapPin className="h-4 w-4 text-[#eb6605]" />
+                                        {itinerary.cover_city.length} Cities Covered
+                                    </span>
+                                )}
                             </div>
-                            <h1
-                                className="leading-tight text-white drop-shadow-lg text-30 md:text-24"
-                                style={{
-                                    color: "#fff",
-                                    backgroundImage: "unset",
-                                    WebkitTextFillColor: "unset",
-                                }}
+                            <Link
+                                href={`/tour-package/${slug}`}
+                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
                             >
-                                {day.day_title}
-                            </h1>
+                                <ChevronLeft className="h-4 w-4" />
+                                Back to {itinerary.title}
+                            </Link>
+                        </div>
+                        <div className="relative order-2">
+                            <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />
+                            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                                <img
+                                    src={itinerary.desktop_banner_image || "/assets/img/hero/1.png"}
+                                    alt={itinerary.title || "Tour banner"}
+                                    className="hidden h-[420px] w-full object-cover md:block"
+                                />
+                                <img
+                                    src={
+                                        itinerary.mobile_banner_image ||
+                                        itinerary.desktop_banner_image ||
+                                        "/assets/img/hero/1.png"
+                                    }
+                                    alt={itinerary.title || "Tour banner"}
+                                    className="h-64 w-full object-cover md:hidden"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -236,51 +235,83 @@ export default function DaysWise({ day, itinerary, slug, allDays }) {
                         </div>
                         <div className="relative">
                             <div className="sticky top-20 space-y-4">
-                                {itinerary.cover_city?.length > 0 && (
+                                {allDays?.length > 0 && (
                                     <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
-                                        <div className="flex items-center gap-2 bg-gradient-to-r from-[#eb6605] to-[#ff8c42] px-3 py-3">
-                                            <h4 className="text-26 md:text-20 text-white"
-                                            style={{
-                                                color: "#fff",
-                                                backgroundImage: "unset",
-                                                WebkitTextFillColor: "unset",
-                                            }}>
-                                                Covered Cities
-                                            </h4>                                            
-                                        </div>
-                                        <div className="divide-y divide-gray-100">
-                                            {itinerary.cover_city.map((city) => (
-                                                <Link
-                                                    key={city.nid}
-                                                    href={`/city/${city.city_url}`}
-                                                    className="group flex items-center gap-3 p-3 transition-colors hover:bg-orange-50/60"
+                                        <div className="flex items-center gap-3 bg-gradient-to-r from-[#004d91] to-[#0a6cc4] px-4 py-3">
+                                            <div>
+                                                <h3
+                                                    className="text-base font-bold text-24 md:text-18 tw:mb-0! text-white"
+                                                    style={{
+                                                        color: "#fff",
+                                                        backgroundImage: "unset",
+                                                        WebkitTextFillColor: "unset",
+                                                    }}
                                                 >
-                                                    <div className="h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-100">
-                                                        {city.city_img_path ? (
-                                                            <img
-                                                                src={city.city_img_path}
-                                                                alt={city.title || "city"}
-                                                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                            />
-                                                        ) : (
-                                                            <div className="flex h-full w-full items-center justify-center bg-gray-100">
-                                                                <Building2 className="h-4 w-4 text-gray-300" />
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="min-w-0 flex-1">
-                                                        <div className="truncate font-bold text-22 md:text-18 text-[#004d91] group-hover:text-[#eb6605]">
-                                                            {city.title}
-                                                        </div>
-                                                        <p className="truncate text-xs text-gray-500">
-                                                            {city.city_details?.slice(0, 40)}...
-                                                        </p>
-                                                    </div>
-
-                                                    <ArrowRight className="h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#eb6605]" />
-                                                </Link>
-                                            ))}
+                                                    Day Wise Itinerary
+                                                </h3>
+                                            </div>
                                         </div>
+
+                                        {/* Days list */}
+                                        <ul className="divide-y divide-gray-100">
+                                            {allDays.map((d, index) => {
+                                                const dayNum = index + 1;
+                                                const isActive = dayNum === day.day_number;
+
+                                                return (
+                                                    <li key={d.nid || index}>
+                                                        <Link
+                                                            href={`/tour-package/${slug}/day-${dayNum}`}
+                                                            className={`group flex items-center gap-3 px-3 py-3 transition-colors ${
+                                                                isActive
+                                                                    ? "bg-orange-50/80"
+                                                                    : "hover:bg-orange-50/60"
+                                                            }`}
+                                                        >
+                                                            {/* Number badge */}
+                                                            <span
+                                                                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-all ${
+                                                                    isActive
+                                                                        ? "bg-[#eb6605] text-white ring-4 ring-orange-100"
+                                                                        : "bg-orange-50 text-[#eb6605] ring-1 ring-orange-200 group-hover:bg-[#eb6605] group-hover:text-white group-hover:ring-orange-100"
+                                                                }`}
+                                                            >
+                                                                {String(dayNum).padStart(2, "0")}
+                                                            </span>
+
+                                                            {/* Title */}
+                                                            <div className="min-w-0 flex-1">
+                                                                <div
+                                                                    className={`text-[11px] font-semibold uppercase tracking-wider ${
+                                                                        isActive
+                                                                            ? "text-[#eb6605]"
+                                                                            : "text-[#eb6605]"
+                                                                    }`}
+                                                                >
+                                                                    Day {dayNum}
+                                                                </div>
+                                                                <div
+                                                                    className={`line-clamp-2 text-sm font-semibold leading-5 transition-colors md:text-[15px] md:leading-6 ${
+                                                                        isActive
+                                                                            ? "text-[#eb6605]"
+                                                                            : "text-[#004d91] group-hover:text-[#0a6cc4]"
+                                                                    }`}
+                                                                >
+                                                                    {d.day_title}
+                                                                </div>
+                                                            </div>
+
+                                                            {/* Arrow / Active dot */}
+                                                            {isActive ? (
+                                                                <span className="flex h-2 w-2 shrink-0 rounded-full bg-[#eb6605]" />
+                                                            ) : (
+                                                                <ArrowRight className="h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#eb6605]" />
+                                                            )}
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            })}
+                                        </ul>
                                     </div>
                                 )}
                                 <Link
