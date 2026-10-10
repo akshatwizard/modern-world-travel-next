@@ -20,7 +20,7 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
     const [selectedTour, setSelectedTour] = useState(null);
     const pathname = usePathname();
 
-    const { title, itinerary_description, duration, desktop_banner_image, mobile_banner_image, highlights, inclusions, exclusions, for_daywise = [], cover_city = [] } = initialData;
+    const { title, tour_package_slug, itinerary_description, duration, desktop_banner_image, mobile_banner_image, highlights, inclusions, exclusions, for_daywise = [], cover_city = [] } = initialData;
     return (
         <>
             {/* <BreadcrumbHeader
@@ -38,8 +38,8 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                             <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#eb6605]/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[#eb6605]">
                                 <Map className="h-3.5 w-3.5" />
                                 Tour Package
-                            </span>
-                            <h1 className="mb-4 text-3xl font-bold leading-tight text-[#004d91] md:text-5xl">
+                            </span> 
+                            <h1 className="mb-4 font-bold leading-tight text-[#004d91] text-30 md:text-24">
                                 {title}
                             </h1>
                             <div className="mb-6 flex flex-wrap gap-3">
@@ -164,7 +164,7 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                         {for_daywise.map((day, index) => (
                                             <li key={day.nid || index}>
                                             <Link
-                                                href={`#day-${index + 1}`}
+                                                href={`/tour-package/${tour_package_slug}/day-${index + 1}`}
                                                 className="group flex items-center gap-4 px-3 py-3 transition-colors hover:bg-orange-50/60"
                                             >
                                                 {/* Day number badge */}
