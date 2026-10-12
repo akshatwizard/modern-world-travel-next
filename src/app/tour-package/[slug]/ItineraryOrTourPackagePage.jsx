@@ -39,30 +39,31 @@ export default function ItineraryOrTourPackagePage({ initialData }) {
                                 <Map className="h-3.5 w-3.5" />
                                 Tour Package
                             </span> 
-                            <h1 className="mb-2 md:tw-mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                            <h1 className="tw:mb-2 md:tw-mb-6 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {title}
                             </h1>
-                            <div className="mb-6 flex flex-wrap gap-3">
+                            <div className="tw:mb-3 flex flex-wrap gap-3 md:tw:mb-8">
                                 {duration && (
-                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm tw:font-medium text-gray-700 shadow-sm">
                                         <CalendarDays className="h-4 w-4 text-[#eb6605]" />
                                         {duration}
                                     </span>
                                 )}
+
                                 {Array.isArray(cover_city) && cover_city.length > 0 && (
-                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm tw:font-medium text-gray-700 shadow-sm">
                                         <MapPin className="h-4 w-4 text-[#eb6605]" />
                                         {cover_city.length} Cities Covered
                                     </span>
                                 )}
                             </div>
-                            <div className="mb-6 text-sm leading-relaxed text-gray-600 md:text-base">
+                            <div className="mb-6 text-xs leading-relaxed text-gray-600 md:text-base">
                                 <div className="flex flex-wrap gap-2">
                                     {cover_city.map((city, index) => (
                                         <Link
                                             key={city.nid || index}
                                             href={`/city/${city.city_url}`}
-                                            className="group inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-white px-4 py-1.5 text-sm font-semibold text-[#004d91] shadow-sm transition-all hover:border-[#eb6605] hover:bg-[#eb6605] hover:text-white"
+                                            className="group inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm font-semibold text-[#004d91] shadow-sm transition-all hover:border-[#eb6605] hover:bg-[#eb6605] hover:text-white"
                                         >
                                             <MapPin className="h-3.5 w-3.5 text-[#eb6605] transition-colors group-hover:text-[#eb6605]" />
                                             {city.title}
