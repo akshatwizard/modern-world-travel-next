@@ -83,6 +83,14 @@ export default function CityPage({ initialData }) {
                                     {city.title}
                                 </span>
                             </nav>
+                            {/* {city.highlights && (
+                                <div className="mt-4 rounded-xl border border-orange-100 bg-white/80 p-4 shadow-sm md:p-5">                                  
+
+                                    <p className="text-sm leading-7 text-gray-700 md:text-base">
+                                        {city.highlights}
+                                    </p>
+                                </div>
+                            )} */}
                             {/* <Link
                                 href="/"
                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
