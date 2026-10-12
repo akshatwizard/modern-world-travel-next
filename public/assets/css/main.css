@@ -14881,8 +14881,8 @@ button.gm-ui-hover-effect::after {
   }
 
   .header.-type-3.-is-sticky .header-logo-btn img {
-    margin-top: 70px;
-    width: 100px;
+      margin-top: 44px;
+      width: 80px;
   }
   .mobile_menu_section .menuNav__item a:hover{
     color: #FFFFFF;

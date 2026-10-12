@@ -83,21 +83,13 @@ export default function CityPage({ initialData }) {
                                     {city.title}
                                 </span>
                             </nav>
-                            {/* {city.highlights && (
-                                <div className="mt-4 rounded-xl border border-orange-100 bg-white/80 p-4 shadow-sm md:p-5">                                  
-
-                                    <p className="text-sm leading-7 text-gray-700 md:text-base">
+                            {city.highlights && (
+                                <div className="tw:mt-2 p-0 md:p-1">
+                                    <div className="mb-3 text-18 md:text-16 text-[#004d91]">
                                         {city.highlights}
-                                    </p>
+                                    </div>                                    
                                 </div>
-                            )} */}
-                            {/* <Link
-                                href="/"
-                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
-                            >
-                                <ChevronLeft className="h-4 w-4" />
-                                Back to Home
-                            </Link> */}
+                            )}                            
                         </div>
                         <div className="relative order-2">
                             <div className="absolute -right-3 -top-3 hidden h-full w-full rounded-3xl border-2 border-[#eb6605]/40 lg:block" />

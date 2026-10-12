@@ -19,23 +19,23 @@ export default function DaysWise({ day, itinerary, slug, allDays }) {
             <section className="bg-gradient-to-br from-orange-50 via-white to-blue-50">
                 <div className="container mx-auto tw:px-2 tw:py-20 md:tw:py-20">
                     <div className="grid items-center gap-3 lg:grid-cols-2 lg:gap-14">
-                        <div className="order-1">                            
-                            <h1 className="mb-2 md:tw-mb-4 font-bold leading-tight text-[#004d91] text-25 md:text-18">
+                        <div className="order-1">
+                            <h1 className="tw:mb-3 md:tw-mb-6 font-bold leading-tight text-[#004d91] text-25 md:text-18">
                                 {day.day_title}
                             </h1>
                             <div className="mb-6 flex flex-wrap gap-3">
-                                <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm tw:font-medium text-gray-700 shadow-sm">
                                     <CalendarDays className="h-4 w-4 text-[#eb6605]" />
                                     Day {day.day_number} of {day.total_days}
                                 </span>
                                 {itinerary.duration && (
-                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm tw:font-medium text-gray-700 shadow-sm">
                                         <Clock className="h-4 w-4 text-[#eb6605]" />
                                         {itinerary.duration}
                                     </span>
                                 )}
                                 {itinerary.cover_city?.length > 0 && (
-                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
+                                    <span className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white tw:px-2 tw:py-1 tw:text-xs md:tw:text-sm tw:font-medium text-gray-700 shadow-sm">
                                         <MapPin className="h-4 w-4 text-[#eb6605]" />
                                         {itinerary.cover_city.length} Cities Covered
                                     </span>
@@ -44,8 +44,7 @@ export default function DaysWise({ day, itinerary, slug, allDays }) {
                             
                             <Link
                                 href={`/tour-package/${slug}`}
-                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]"
-                            >
+                                className="inline-flex items-center gap-2 text-sm font-medium text-[#004d91] transition-colors hover:text-[#eb6605]">
                                 <ChevronLeft className="h-4 w-4" />
                                 Back to {itinerary.title}
                             </Link>
